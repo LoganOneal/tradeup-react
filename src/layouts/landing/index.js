@@ -49,11 +49,13 @@ function Landing() {
   return (
     <LandingLayout
       title="A Skilled Workforce Within Reach"
-      description="We connect businesses with dependable, hard-working skilled tradespeople and laborers — when and where you need them."
+      description="Tradeworkers are the unsung heroes of our economy. We connect businesses with dependable, hard-working skilled tradespeople and laborers — when and where you need them."
       image={curved9}
     >
         <SoftBox display="flex" mb={2}>
             <SoftButton 
+              component={Link}
+              to={"/talent/info"}
               variant="gradient" 
               color="info">
               Looking for Work?
@@ -61,9 +63,10 @@ function Landing() {
             <SoftBox px={1}>
               <SoftButton
                 component={Link}
+                to={"/employers/info"}
                 variant="outlined"
                 color="info">
-                Need Workers?
+                I Want to Hire
               </SoftButton>
           </SoftBox> 
         </SoftBox>

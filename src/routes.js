@@ -45,6 +45,7 @@ import Profile from "layouts/profile";
 import SignIn from "layouts/authentication/sign-in";
 import SignUp from "layouts/authentication/sign-up";
 import Landing from "layouts/landing";
+import TalentInfo from "layouts/talent/talentInfo";
 
 // Soft UI Dashboard React icons
 import Shop from "examples/Icons/Shop";
@@ -64,6 +65,15 @@ const routes = [
     route: "/",
     icon: <Shop size="12px" />,
     component: <Landing />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "Looking for Work?",
+    key: "talentInfo",
+    route: "/talent/info",
+    icon: <Shop size="12px" />,
+    component: <TalentInfo />,
     noCollapse: true,
   },
   {
