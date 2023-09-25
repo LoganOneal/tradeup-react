@@ -40,40 +40,34 @@ import {
 } from "examples/Navbars/DashboardNavbar/styles";
 
 // Authentication layout components
-import CoverLayout from "layouts/authentication/components/CoverLayout";
+import LandingLayout from "layouts/landing/components/LandingLayout";
 
-// Images
-import curved9 from "assets/images/curved-images/curved-6.jpg";
+// Imagess
+import curved9 from "assets/images/landing_workers.jpg";
 
 function Landing() {
-  const [rememberMe, setRememberMe] = useState(true);
-
-  const handleSetRememberMe = () => setRememberMe(!rememberMe);
-
   return (
-    <CoverLayout
+    <LandingLayout
       title="A Skilled Workforce Within Reach"
       description="We connect businesses with dependable, hard-working skilled tradespeople and laborers — when and where you need them."
       image={curved9}
     >
         <SoftBox display="flex" mb={2}>
-            <SoftButton variant="gradient" color="info" >
+            <SoftButton 
+              variant="gradient" 
+              color="info">
               Looking for Work?
             </SoftButton>
             <SoftBox px={1}>
-            
-            <SoftButton
-              component={Link}
-              variant="outlined"
-              size="medium"
-              color="info"
-            >
-              Need Workers?
-            </SoftButton>
-
+              <SoftButton
+                component={Link}
+                variant="outlined"
+                color="info">
+                Need Workers?
+              </SoftButton>
           </SoftBox> 
         </SoftBox>
-    </CoverLayout>
+    </LandingLayout>
   );
 }
 
