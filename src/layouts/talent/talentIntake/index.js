@@ -1,0 +1,124 @@
+/**
+=========================================================
+* Soft UI Dashboard React - v4.0.1
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Copyright 2023 Creative Tim (https://www.creative-tim.com)
+
+Coded by www.creative-tim.com
+
+ =========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+*/
+
+import { useState } from "react";
+
+// react-router-dom components
+import { Link } from "react-router-dom";
+
+// @mui material components
+import Card from "@mui/material/Card";
+import Checkbox from "@mui/material/Checkbox";
+import Grid from "@mui/material/Grid";
+
+// Soft UI Dashboard React components
+import SoftBox from "components/SoftBox";
+import SoftTypography from "components/SoftTypography";
+import SoftInput from "components/SoftInput";
+import SoftButton from "components/SoftButton";
+
+// Authentication layout components
+import BasicLayout from "layouts/talent/components/BasicLayout";
+import Socials from "layouts/authentication/components/Socials";
+import Separator from "layouts/authentication/components/Separator";
+
+// Images
+import curved6 from "assets/images/talent.jpg";
+
+function TalentIntake() {
+  const [agreement, setAgremment] = useState(true);
+
+  const handleSetAgremment = () => setAgremment(!agreement);
+
+  return (
+    <BasicLayout
+      title="Tell us about yourself"
+      description="We will use this information to match you with the right employers."
+      image={curved6}
+    >
+      <Grid item xs={8} sm={9} md={5} lg={4} xl={8}>
+        <Card sx={{ width: "100%" }}>
+          <SoftBox p={3} textAlign="center">
+            <SoftTypography variant="h5" fontWeight="medium">
+              Create your account for free.
+            </SoftTypography>
+          </SoftBox>
+          <SoftBox pt={0} pb={3} px={3}>
+
+            <SoftBox component="form" role="form">
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={6}>
+                  <SoftBox mb={2}>
+                    <SoftBox mb={1} ml={0.5}>
+                      <SoftTypography component="label" variant="caption" fontWeight="bold">
+                        First Name
+                      </SoftTypography>
+                    </SoftBox>
+                    <SoftInput type="text" placeholder="First Name" />
+                  </SoftBox>
+                  <SoftBox mb={2}>
+                    <SoftBox mb={1} ml={0.5}>
+                      <SoftTypography component="label" variant="caption" fontWeight="bold">
+                        Last Name
+                      </SoftTypography>
+                    </SoftBox>
+                    <SoftInput type="text" placeholder="Last Name" />
+                  </SoftBox>
+                  <SoftBox mb={2}>
+                    <SoftBox mb={1} ml={0.5}>
+                      <SoftTypography component="label" variant="caption" fontWeight="bold">
+                        Phone Number
+                      </SoftTypography>
+                    </SoftBox>
+                    <SoftInput type="tel" placeholder="Phone Number" />
+                  </SoftBox>
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <SoftBox mb={2}>
+                    <SoftBox mb={1} ml={0.5}>
+                      <SoftTypography component="label" variant="caption" fontWeight="bold">
+                        Email
+                      </SoftTypography>
+                    </SoftBox>
+                    <SoftInput type="email" placeholder="Email" />
+                  </SoftBox>
+                  <SoftBox mb={2}>
+                    <SoftBox mb={1} ml={0.5}>
+                      <SoftTypography component="label" variant="caption" fontWeight="bold">
+                        Company
+                      </SoftTypography>
+                    </SoftBox>
+                    <SoftInput type="text" placeholder="Company" />
+                  </SoftBox>
+                  <SoftBox mt={7}>
+                    <SoftBox mb={1} ml={0.5}>
+                      <SoftButton variant="gradient" color="info" fullWidth>
+                        Submit
+                      </SoftButton>
+                    </SoftBox>
+                  </SoftBox>
+
+                </Grid>
+              </Grid>
+            </SoftBox>
+
+          </SoftBox>
+        </Card>
+      </Grid>
+    </BasicLayout>
+  );
+}
+
+export default TalentIntake;

@@ -21,6 +21,7 @@ import { Link } from "react-router-dom";
 // @mui material components
 import Card from "@mui/material/Card";
 import Checkbox from "@mui/material/Checkbox";
+import Grid from "@mui/material/Grid";
 
 // Soft UI Dashboard React components
 import SoftBox from "components/SoftBox";
@@ -44,9 +45,10 @@ function TalentInfo() {
   return (
     <BasicLayout
       title="Employers Seeking Qualified Canidates!"
-      description="Create your account for free."
+      description=""
       image={curved6}
     >
+      <Grid item xs={11} sm={9} md={5} lg={4} xl={3}>
       <Card>
         <SoftBox p={3} textAlign="center">
           <SoftTypography variant="h5" fontWeight="medium">
@@ -57,7 +59,7 @@ function TalentInfo() {
           <SoftBox component="form" role="form" textAlign="center">
           <SoftButton 
               component={Link}
-              to={"/talent/info"}
+              to={"/talent/intake"}
               variant="gradient" 
               color="info">
               Create my Profile
@@ -65,6 +67,7 @@ function TalentInfo() {
           </SoftBox>
         </SoftBox>
       </Card>
+      </Grid>
     </BasicLayout>
   );
 }
