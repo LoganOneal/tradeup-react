@@ -12,7 +12,7 @@ Coded by www.creative-tim.com
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
-
+import axios from 'axios';
 import { useState } from "react";
 
 // react-router-dom components
@@ -33,14 +33,56 @@ import SoftButton from "components/SoftButton";
 import BasicLayout from "layouts/talent/components/BasicLayout";
 import Socials from "layouts/authentication/components/Socials";
 import Separator from "layouts/authentication/components/Separator";
+import Airtable from 'airtable';
 
 // Images
 import curved6 from "assets/images/talent.jpg";
 
 function TalentIntake() {
-  const [agreement, setAgremment] = useState(true);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    phoneNumber: "",
+    email: "",
+    company: "",
+  });
 
-  const handleSetAgremment = () => setAgremment(!agreement);
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (formData.firstName === "" || formData.lastName === "" || formData.phoneNumber === "" || formData.email === "" || formData.company === "") {
+      alert("Please fill in all fields.");
+    } else {
+      // Submit the form
+      const apiKey = 'patU1xXENmGuCNOmb.ca985bc227ecd54aeb1cc50bb616ab61b1672e911b967bed620a4569705dbabe';
+      const baseId = 'appF8iniLjyjrpRcM';
+      const tableName = 'Intake';
+
+      console.log(formData);
+
+      axios.post(`https://api.airtable.com/v0/${baseId}/${tableName}`, {
+        fields: formData
+      }, {
+        headers: {
+          'Authorization': `Bearer ${apiKey}`,
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(response => {
+        console.log('Data sent successfully', response.data);
+      })
+      .catch(error => {
+        console.error('Error sending data:', error);
+      });
+    }
+  };
 
   return (
     <BasicLayout
@@ -57,7 +99,7 @@ function TalentIntake() {
           </SoftBox>
           <SoftBox pt={0} pb={3} px={3}>
 
-            <SoftBox component="form" role="form">
+            <SoftBox component="form" role="form" onSubmit={handleSubmit}>
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
                   <SoftBox mb={2}>
@@ -66,7 +108,7 @@ function TalentIntake() {
                         First Name
                       </SoftTypography>
                     </SoftBox>
-                    <SoftInput type="text" placeholder="First Name" />
+                    <SoftInput type="text" placeholder="First Name" name="firstName" value={formData.firstName} onChange={handleInputChange} />
                   </SoftBox>
                   <SoftBox mb={2}>
                     <SoftBox mb={1} ml={0.5}>
@@ -74,7 +116,7 @@ function TalentIntake() {
                         Last Name
                       </SoftTypography>
                     </SoftBox>
-                    <SoftInput type="text" placeholder="Last Name" />
+                    <SoftInput type="text" placeholder="Last Name" name="lastName" value={formData.lastName} onChange={handleInputChange} />
                   </SoftBox>
                   <SoftBox mb={2}>
                     <SoftBox mb={1} ml={0.5}>
@@ -82,7 +124,7 @@ function TalentIntake() {
                         Phone Number
                       </SoftTypography>
                     </SoftBox>
-                    <SoftInput type="tel" placeholder="Phone Number" />
+                    <SoftInput type="tel" placeholder="Phone Number" name="phoneNumber" value={formData.phoneNumber} onChange={handleInputChange} />
                   </SoftBox>
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -92,7 +134,7 @@ function TalentIntake() {
                         Email
                       </SoftTypography>
                     </SoftBox>
-                    <SoftInput type="email" placeholder="Email" />
+                    <SoftInput type="email" placeholder="Email" name="email" value={formData.email} onChange={handleInputChange} />
                   </SoftBox>
                   <SoftBox mb={2}>
                     <SoftBox mb={1} ml={0.5}>
@@ -100,11 +142,11 @@ function TalentIntake() {
                         Company
                       </SoftTypography>
                     </SoftBox>
-                    <SoftInput type="text" placeholder="Company" />
+                    <SoftInput type="text" placeholder="Company" name="company" value={formData.company} onChange={handleInputChange} />
                   </SoftBox>
                   <SoftBox mt={7}>
                     <SoftBox mb={1} ml={0.5}>
-                      <SoftButton variant="gradient" color="info" fullWidth>
+                      <SoftButton type="submit" variant="gradient" color="info" fullWidth>
                         Submit
                       </SoftButton>
                     </SoftBox>
