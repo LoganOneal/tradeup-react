@@ -55,33 +55,22 @@ function TalentIntake() {
     }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log(formData)
     if (formData.firstName === "" || formData.lastName === "" || formData.phoneNumber === "" || formData.email === "" || formData.company === "") {
       alert("Please fill in all fields.");
     } else {
-      // Submit the form
-      const apiKey = process.env.REACT_APP_AIRTABLE_ACCESS_TOKEN;
-      const baseId = process.env.REACT_APP_AIRTABLE_BASE_ID;
-      const tableName = 'Talent Intake';
-
-      console.log(formData);
-      console.log(apiKey);
-
-      axios.post(`https://api.airtable.com/v0/${baseId}/${tableName}`, {
-        fields: formData
-      }, {
+      fetch('/api/submitTalentIntakeForm', {
+        method: 'POST',
         headers: {
-          'Authorization': `Bearer ${apiKey}`,
           'Content-Type': 'application/json'
-        }
+        },
+        body: JSON.stringify({ formData })
       })
-      .then(response => {
-        console.log('Data sent successfully', response.data);
-      })
-      .catch(error => {
-        console.error('Error sending data:', error);
-      });
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error(error));
     }
   };
 
