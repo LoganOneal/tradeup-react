@@ -141,7 +141,6 @@ function TalentIntake() {
                       </SoftButton>
                     </SoftBox>
                   </SoftBox>
-
                 </Grid>
               </Grid>
             </SoftBox>

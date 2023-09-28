@@ -33,7 +33,7 @@ import Footer from "layouts/authentication/components/Footer";
 function BasicLayout({ title, description, image, children }) {
   return (
     <PageLayout>
-     <DefaultNavbar
+      <DefaultNavbar
         action={{
           type: "external",
           route: "https://creative-tim.com/product/soft-ui-dashboard-react",
@@ -44,7 +44,6 @@ function BasicLayout({ title, description, image, children }) {
       <SoftBox
         width="100%"
         minHeight="85vh"
-        pb={32}
         sx={{
           backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
             image &&
@@ -58,7 +57,7 @@ function BasicLayout({ title, description, image, children }) {
         }}
       >
         <Grid container spacing={3} justifyContent="center" sx={{ textAlign: "center" }}>
-          <Grid item xs={10} lg={4}>
+          <Grid item xs={10} lg={8}>
             <SoftBox mt={16} mb={1}>
               <SoftTypography variant="h2" color="white" fontWeight="bold">
                 {title}
@@ -69,12 +68,12 @@ function BasicLayout({ title, description, image, children }) {
                 {description}
               </SoftTypography>
             </SoftBox>
+            <SoftBox mb={26} mt={4} px={1} width="calc(100% - 2rem)" mx="auto">
+              <Grid container spacing={1} justifyContent="center">
+                {children}
+              </Grid>
+            </SoftBox>
           </Grid>
-        </Grid>
-      </SoftBox>
-      <SoftBox mb={26} mt={{ xs: -40, lg: -48 }} px={1} width="calc(100% - 2rem)" mx="auto">
-        <Grid container spacing={1} justifyContent="center">
-            {children}
         </Grid>
       </SoftBox>
       <Footer />
