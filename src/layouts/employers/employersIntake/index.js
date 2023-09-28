@@ -38,7 +38,7 @@ import Airtable from 'airtable';
 // Images
 import curved6 from "assets/images/talent.jpg";
 
-function TalentIntake() {
+function EmployersIntake() {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -61,9 +61,9 @@ function TalentIntake() {
       alert("Please fill in all fields.");
     } else {
       // Submit the form
-      const apiKey = process.env.REACT_APP_AIRTABLE_ACCESS_TOKEN;
-      const baseId = process.env.REACT_APP_AIRTABLE_BASE_ID;
-      const tableName = 'Talent Intake';
+      const apiKey = process.env.AIRTABLE_ACCESS_TOKEN;
+      const baseId = process.env.AIRTABLE_BASE_ID;
+      const tableName = 'Employer Intake';
 
       console.log(formData);
       console.log(apiKey);
@@ -164,4 +164,4 @@ function TalentIntake() {
   );
 }
 
-export default TalentIntake;
+export default EmployersIntake;

@@ -57,6 +57,8 @@ import SpaceShip from "examples/Icons/SpaceShip";
 import CustomerSupport from "examples/Icons/CustomerSupport";
 import CreditCard from "examples/Icons/CreditCard";
 import Cube from "examples/Icons/Cube";
+import EmployersInfo from "layouts/employers/employersInfo";
+import EmployersIntake from "layouts/employers/employersIntake";
 
 const routes = [
   {
@@ -84,6 +86,24 @@ const routes = [
     route: "/talent/intake",
     icon: <Shop size="12px" />,
     component: <TalentIntake />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "I Want to Hire",
+    key: "employersInfo",
+    route: "/employers/info",
+    icon: <Shop size="12px" />,
+    component: <EmployersInfo />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "I Want to Hire",
+    key: "employersIntake",
+    route: "/employers/intake",
+    icon: <Shop size="12px" />,
+    component: <EmployersIntake />,
     noCollapse: true,
   },
   {
