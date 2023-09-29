@@ -55,40 +55,29 @@ function EmployersIntake() {
     }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log(formData)
     if (formData.firstName === "" || formData.lastName === "" || formData.phoneNumber === "" || formData.email === "" || formData.company === "") {
       alert("Please fill in all fields.");
     } else {
-      // Submit the form
-      const apiKey = process.env.AIRTABLE_ACCESS_TOKEN;
-      const baseId = process.env.AIRTABLE_BASE_ID;
-      const tableName = 'Employer Intake';
-
-      console.log(formData);
-      console.log(apiKey);
-
-      axios.post(`https://api.airtable.com/v0/${baseId}/${tableName}`, {
-        fields: formData
-      }, {
+      fetch('/api/submitEmployerIntakeForm', {
+        method: 'POST',
         headers: {
-          'Authorization': `Bearer ${apiKey}`,
           'Content-Type': 'application/json'
-        }
+        },
+        body: JSON.stringify({ formData })
       })
-      .then(response => {
-        console.log('Data sent successfully', response.data);
-      })
-      .catch(error => {
-        console.error('Error sending data:', error);
-      });
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error(error));
     }
   };
 
   return (
     <BasicLayout
       title="Tell us about yourself"
-      description="We will use this information to match you with the right employers."
+      description="We will use this information to match you with ideal job canidates"
       image={curved6}
     >
       <Grid item xs={8} sm={9} md={5} lg={4} xl={8}>
@@ -114,28 +103,10 @@ function EmployersIntake() {
                   <SoftBox mb={2}>
                     <SoftBox mb={1} ml={0.5}>
                       <SoftTypography component="label" variant="caption" fontWeight="bold">
-                        Last Name
-                      </SoftTypography>
-                    </SoftBox>
-                    <SoftInput type="text" placeholder="Last Name" name="lastName" value={formData.lastName} onChange={handleInputChange} />
-                  </SoftBox>
-                  <SoftBox mb={2}>
-                    <SoftBox mb={1} ml={0.5}>
-                      <SoftTypography component="label" variant="caption" fontWeight="bold">
                         Phone Number
                       </SoftTypography>
                     </SoftBox>
                     <SoftInput type="tel" placeholder="Phone Number" name="phoneNumber" value={formData.phoneNumber} onChange={handleInputChange} />
-                  </SoftBox>
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <SoftBox mb={2}>
-                    <SoftBox mb={1} ml={0.5}>
-                      <SoftTypography component="label" variant="caption" fontWeight="bold">
-                        Email
-                      </SoftTypography>
-                    </SoftBox>
-                    <SoftInput type="email" placeholder="Email" name="email" value={formData.email} onChange={handleInputChange} />
                   </SoftBox>
                   <SoftBox mb={2}>
                     <SoftBox mb={1} ml={0.5}>
@@ -145,15 +116,33 @@ function EmployersIntake() {
                     </SoftBox>
                     <SoftInput type="text" placeholder="Company" name="company" value={formData.company} onChange={handleInputChange} />
                   </SoftBox>
-                  <SoftBox mt={7}>
-                    <SoftBox mb={1} ml={0.5}>
-                      <SoftButton type="submit" variant="gradient" color="info" fullWidth>
-                        Submit
-                      </SoftButton>
-                    </SoftBox>
-                  </SoftBox>
-
                 </Grid>
+                <Grid item xs={12} sm={6}>
+                <SoftBox mb={2}>
+                    <SoftBox mb={1} ml={0.5}>
+                      <SoftTypography component="label" variant="caption" fontWeight="bold">
+                        Last Name
+                      </SoftTypography>
+                    </SoftBox>
+                    <SoftInput type="text" placeholder="Last Name" name="lastName" value={formData.lastName} onChange={handleInputChange} />
+                  </SoftBox>
+                  <SoftBox mb={2}>
+                    <SoftBox mb={1} ml={0.5}>
+                      <SoftTypography component="label" variant="caption" fontWeight="bold">
+                        Email
+                      </SoftTypography>
+                    </SoftBox>
+                    <SoftInput type="email" placeholder="Email" name="email" value={formData.email} onChange={handleInputChange} />
+                  </SoftBox>
+                </Grid>
+                <Grid item xl={12} sm={6} justifyContent={"center"}>
+                  <SoftBox>
+                    <SoftButton type="submit" variant="gradient" color="dark" fullWidth>
+                      Submit
+                    </SoftButton>
+                  </SoftBox>
+                </Grid>
+
               </Grid>
             </SoftBox>
 

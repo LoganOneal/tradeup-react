@@ -103,6 +103,16 @@ function TalentIntake() {
                   <SoftBox mb={2}>
                     <SoftBox mb={1} ml={0.5}>
                       <SoftTypography component="label" variant="caption" fontWeight="bold">
+                        Phone Number
+                      </SoftTypography>
+                    </SoftBox>
+                    <SoftInput type="tel" placeholder="Phone Number" name="phoneNumber" value={formData.phoneNumber} onChange={handleInputChange} />
+                  </SoftBox>
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                <SoftBox mb={2}>
+                    <SoftBox mb={1} ml={0.5}>
+                      <SoftTypography component="label" variant="caption" fontWeight="bold">
                         Last Name
                       </SoftTypography>
                     </SoftBox>
@@ -111,37 +121,20 @@ function TalentIntake() {
                   <SoftBox mb={2}>
                     <SoftBox mb={1} ml={0.5}>
                       <SoftTypography component="label" variant="caption" fontWeight="bold">
-                        Phone Number
-                      </SoftTypography>
-                    </SoftBox>
-                    <SoftInput type="tel" placeholder="Phone Number" name="phoneNumber" value={formData.phoneNumber} onChange={handleInputChange} />
-                  </SoftBox>
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <SoftBox mb={2}>
-                    <SoftBox mb={1} ml={0.5}>
-                      <SoftTypography component="label" variant="caption" fontWeight="bold">
                         Email
                       </SoftTypography>
                     </SoftBox>
                     <SoftInput type="email" placeholder="Email" name="email" value={formData.email} onChange={handleInputChange} />
                   </SoftBox>
-                  <SoftBox mb={2}>
-                    <SoftBox mb={1} ml={0.5}>
-                      <SoftTypography component="label" variant="caption" fontWeight="bold">
-                        Company
-                      </SoftTypography>
-                    </SoftBox>
-                    <SoftInput type="text" placeholder="Company" name="company" value={formData.company} onChange={handleInputChange} />
-                  </SoftBox>
-                  <SoftBox mt={7}>
-                    <SoftBox mb={1} ml={0.5}>
-                      <SoftButton type="submit" variant="gradient" color="info" fullWidth>
-                        Submit
-                      </SoftButton>
-                    </SoftBox>
+                </Grid>
+                <Grid item xl={12} sm={6} justifyContent={"center"}>
+                  <SoftBox>
+                    <SoftButton type="submit" variant="gradient" color="dark" fullWidth>
+                      Submit
+                    </SoftButton>
                   </SoftBox>
                 </Grid>
+
               </Grid>
             </SoftBox>
 

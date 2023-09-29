@@ -46,10 +46,9 @@ function DefaultNavbarMobile({ open, close }) {
       MenuListProps={{ style: { width: `calc(${width}px - 4rem)` } }}
     >
       <SoftBox px={0.5}>
-        <DefaultNavbarLink icon="donut_large" name="dashboard" route="/dashboard" />
-        <DefaultNavbarLink icon="person" name="profile" route="/profile" />
-        <DefaultNavbarLink icon="account_circle" name="sign up" route="/authentication/sign-up" />
-        <DefaultNavbarLink icon="key" name="sign in" route="/authentication/sign-in" />
+        <DefaultNavbarLink icon="person" name="home" route="/" />
+        <DefaultNavbarLink icon="person" name="tradesworkers" route="/talent/intake" />
+        <DefaultNavbarLink icon="person" name="employers" route="/employers/intake" />
       </SoftBox>
     </Menu>
   );

@@ -64,7 +64,7 @@ function EmployersInfo() {
             <SoftBox component="form" role="form" textAlign="center">
               <SoftButton
                 component={Link}
-                to={"/talent/intake"}
+                to={"/employers/intake"}
                 variant="gradient"
                 color="info">
                 Create my Employer Profile
