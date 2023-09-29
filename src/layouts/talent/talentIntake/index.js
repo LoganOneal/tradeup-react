@@ -44,7 +44,6 @@ function TalentIntake() {
     lastName: "",
     phoneNumber: "",
     email: "",
-    company: "",
   });
 
   const handleInputChange = (event) => {
@@ -58,7 +57,7 @@ function TalentIntake() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(formData)
-    if (formData.firstName === "" || formData.lastName === "" || formData.phoneNumber === "" || formData.email === "" || formData.company === "") {
+    if (formData.firstName === "" || formData.lastName === "" || formData.phoneNumber === "" || formData.email === "") {
       alert("Please fill in all fields.");
     } else {
       fetch('/api/submitTalentIntakeForm', {

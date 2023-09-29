@@ -9,17 +9,17 @@ var jsonParser = bodyParser.json()
 
 app.use(pino);
 
-app.get('/api/greeting', (req, res) => {
+app.get('/api/helloWorkd', (req, res) => {
   const name = req.query.name || 'World';
   res.setHeader('Content-Type', 'application/json');
   res.send(JSON.stringify({ greeting: `Hello ${name}!` }));
 });
 
 app.post('/api/submitTalentIntakeForm', jsonParser, async (req, res) => {
-  const { firstName, lastName, phoneNumber, email, company } = req.body.formData;
+  const { firstName, lastName, phoneNumber, email } = req.body.formData;
   console.log("BODY", req.body);
   try {
-    await talentIntakeTable.create([{ fields: { firstName, lastName, phoneNumber, email, company } }]);
+    await talentIntakeTable.create([{ fields: { firstName, lastName, phoneNumber, email } }]);
     res.status(200);
   } catch (error) {
     console.log(error);
