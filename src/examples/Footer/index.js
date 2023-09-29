@@ -13,105 +13,70 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-// prop-types is a library for typechecking of props
-import PropTypes from "prop-types";
-
 // @mui material components
-import Link from "@mui/material/Link";
-import Icon from "@mui/material/Icon";
+import Grid from "@mui/material/Grid";
+
+// @mui icons
+import FacebookIcon from "@mui/icons-material/Facebook";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import PinterestIcon from "@mui/icons-material/Pinterest";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 // Soft UI Dashboard React components
 import SoftBox from "components/SoftBox";
 import SoftTypography from "components/SoftTypography";
 
-// Soft UI Dashboard React base styles
-import typography from "assets/theme/base/typography";
-
-function Footer({ company, links }) {
-  const { href, name } = company;
-  const { size } = typography;
-
-  const renderLinks = () =>
-    links.map((link) => (
-      <SoftBox key={link.name} component="li" px={2} lineHeight={1}>
-        <Link href={link.href} target="_blank">
-          <SoftTypography variant="button" fontWeight="regular" color="text">
-            {link.name}
-          </SoftTypography>
-        </Link>
-      </SoftBox>
-    ));
-
+function Footer() {
   return (
-    <SoftBox
-      width="100%"
-      display="flex"
-      flexDirection={{ xs: "column", lg: "row" }}
-      justifyContent="space-between"
-      alignItems="center"
-      px={1.5}
-    >
-      <SoftBox
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        flexWrap="wrap"
-        color="text"
-        fontSize={size.sm}
-        px={1.5}
-      >
-        &copy; {new Date().getFullYear()}, made with
-        <SoftBox fontSize={size.md} color="text" mb={-0.5} mx={0.25}>
-          <Icon color="inherit" fontSize="inherit">
-            favorite
-          </Icon>
-        </SoftBox>
-        by
-        <Link href={href} target="_blank">
-          <SoftTypography variant="button" fontWeight="medium">
-            &nbsp;{name}&nbsp;
-          </SoftTypography>
-        </Link>
-        for a better web.
-      </SoftBox>
-      <SoftBox
-        component="ul"
-        sx={({ breakpoints }) => ({
-          display: "flex",
-          flexWrap: "wrap",
-          alignItems: "center",
-          justifyContent: "center",
-          listStyle: "none",
-          mt: 3,
-          mb: 0,
-          p: 0,
-
-          [breakpoints.up("lg")]: {
-            mt: 0,
-          },
-        })}
-      >
-        {renderLinks()}
-      </SoftBox>
+    <SoftBox component="footer" py={6}>
+      <Grid container justifyContent="center">
+        <Grid item xs={10} lg={8}>
+          <SoftBox display="flex" justifyContent="center" flexWrap="wrap" mb={3}>
+            <SoftBox mr={{ xs: 2, lg: 3, xl: 6 }}>
+              <SoftTypography component="a" href="#" variant="body2" color="secondary">
+                TradeUp
+              </SoftTypography>
+            </SoftBox>
+            <SoftBox mr={{ xs: 2, lg: 3, xl: 6 }}>
+              <SoftTypography component="a" href="#" variant="body2" color="secondary">
+                About Us
+              </SoftTypography>
+            </SoftBox>
+            <SoftBox mr={{ xs: 0, lg: 3, xl: 6 }}>
+              <SoftTypography component="a" href="#" variant="body2" color="secondary">
+                Team
+              </SoftTypography>
+            </SoftBox>
+            <SoftBox mr={{ xs: 2, lg: 3, xl: 6 }}>
+              <SoftTypography component="a" href="#" variant="body2" color="secondary">
+                Product
+              </SoftTypography>
+            </SoftBox>
+          </SoftBox>
+        </Grid>
+        <Grid item xs={12} lg={8}>
+          <SoftBox display="flex" justifyContent="center" mt={1} mb={3}>
+            <SoftBox mr={3} color="secondary">
+              <FacebookIcon fontSize="small" />
+            </SoftBox>
+            <SoftBox mr={3} color="secondary">
+              <TwitterIcon fontSize="small" />
+            </SoftBox>
+            <SoftBox mr={3} color="secondary">
+              <InstagramIcon fontSize="small" />
+            </SoftBox>
+            <SoftBox mr={3} color="secondary">
+              <PinterestIcon fontSize="small" />
+            </SoftBox>
+            <SoftBox color="secondary">
+              <LinkedInIcon fontSize="small" />
+            </SoftBox>
+          </SoftBox>
+        </Grid>
+      </Grid>
     </SoftBox>
   );
 }
-
-// Setting default values for the props of Footer
-Footer.defaultProps = {
-  company: { href: "https://www.creative-tim.com/", name: "Creative Tim" },
-  links: [
-    { href: "https://www.creative-tim.com/", name: "Creative Tim" },
-    { href: "https://www.creative-tim.com/presentation", name: "About Us" },
-    { href: "https://www.creative-tim.com/blog", name: "Blog" },
-    { href: "https://www.creative-tim.com/license", name: "License" },
-  ],
-};
-
-// Typechecking props for the Footer
-Footer.propTypes = {
-  company: PropTypes.objectOf(PropTypes.string),
-  links: PropTypes.arrayOf(PropTypes.object),
-};
 
 export default Footer;

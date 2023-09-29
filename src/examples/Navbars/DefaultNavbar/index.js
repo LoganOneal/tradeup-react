@@ -37,7 +37,7 @@ import DefaultNavbarMobile from "examples/Navbars/DefaultNavbar/DefaultNavbarMob
 // Soft UI Dashboard React base styles
 import breakpoints from "assets/theme/base/breakpoints";
 
-function DefaultNavbar({ transparent, light, action }) {
+function DefaultNavbar({ transparent, light, action1, action2 }) {
   const [mobileNavbar, setMobileNavbar] = useState(false);
   const [mobileView, setMobileView] = useState(false);
 
@@ -96,52 +96,34 @@ function DefaultNavbar({ transparent, light, action }) {
             TradeUP
           </SoftTypography>
         </SoftBox>
-        <SoftBox color="inherit" display={{ xs: "none", lg: "flex" }} m={0} p={0}>
-          <DefaultNavbarLink icon="donut_large" name="dashboard" route="/dashboard" light={light} />
-          <DefaultNavbarLink icon="person" name="profile" route="/profile" light={light} />
-          <DefaultNavbarLink
-            icon="account_circle"
-            name="sign up"
-            route="/authentication/sign-up"
-            light={light}
-          />
-          <DefaultNavbarLink
-            icon="key"
-            name="sign in"
-            route="/authentication/sign-in"
-            light={light}
-          />
+        <SoftBox>
+          <SoftBox display={{ xs: "none", lg: "inline-block" }} mx={3}>
+            <SoftButton
+              component={Link}
+              to={action1.route}
+              variant="gradient"
+              color={action1.color ? action1.color : "info"}
+              size="small"
+              circular
+            >
+              {action1.label}
+            </SoftButton>
+          </SoftBox>
+
+          <SoftBox display={{ xs: "none", lg: "inline-block" }}>
+            <SoftButton
+              component={Link}
+              to={action2.route}
+              variant="gradient"
+              color={action2.color ? action2.color : "info"}
+              size="small"
+              circular
+            >
+              {action2.label}
+            </SoftButton>
+          </SoftBox>
         </SoftBox>
-        {action &&
-          (action.type === "internal" ? (
-            <SoftBox display={{ xs: "none", lg: "inline-block" }}>
-              <SoftButton
-                component={Link}
-                to={action.route}
-                variant="gradient"
-                color={action.color ? action.color : "info"}
-                size="small"
-                circular
-              >
-                {action.label}
-              </SoftButton>
-            </SoftBox>
-          ) : (
-            <SoftBox display={{ xs: "none", lg: "inline-block" }}>
-              <SoftButton
-                component="a"
-                href={action.route}
-                target="_blank"
-                rel="noreferrer"
-                variant="gradient"
-                color={action.color ? action.color : "info"}
-                size="small"
-                circular
-              >
-                {action.label}
-              </SoftButton>
-            </SoftBox>
-          ))}
+
         <SoftBox
           display={{ xs: "inline-block", lg: "none" }}
           lineHeight={0}
@@ -170,7 +152,7 @@ DefaultNavbar.defaultProps = {
 DefaultNavbar.propTypes = {
   transparent: PropTypes.bool,
   light: PropTypes.bool,
-  action: PropTypes.oneOfType([
+  action1: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.shape({
       type: PropTypes.oneOf(["external", "internal"]).isRequired,
@@ -188,6 +170,24 @@ DefaultNavbar.propTypes = {
       label: PropTypes.string.isRequired,
     }),
   ]),
+  action2: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.shape({
+      type: PropTypes.oneOf(["external", "internal"]).isRequired,
+      route: PropTypes.string.isRequired,
+      color: PropTypes.oneOf([
+        "primary",
+        "secondary",
+        "info",
+        "success",
+        "warning",
+        "error",
+        "dark",
+        "light",
+      ]),
+      label: PropTypes.string.isRequired,
+    }),
+  ])
 };
 
 export default DefaultNavbar;

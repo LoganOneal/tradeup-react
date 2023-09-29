@@ -28,17 +28,23 @@ import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import PageLayout from "examples/LayoutContainers/PageLayout";
 
 // Authentication layout components
-import Footer from "layouts/authentication/components/Footer";
+import Footer from "examples/Footer";
 
 function BasicLayout({ title, description, image, children }) {
   return (
     <PageLayout>
-     <DefaultNavbar
-        action={{
-          type: "external",
-          route: "https://creative-tim.com/product/soft-ui-dashboard-react",
-          label: "free download",
+      <DefaultNavbar
+        action1={{
+          type: "internet",
+          route: "/talent/info",
+          label: "Tradesworkers",
           color: "dark",
+        }}
+        action2={{
+          type: "external",
+          route: "/employers/info",
+          label: "Emlpoyers",
+          color: "secondary",
         }}
       />
       <SoftBox
@@ -74,7 +80,7 @@ function BasicLayout({ title, description, image, children }) {
       </SoftBox>
       <SoftBox mb={26} mt={{ xs: -40, lg: -58 }} px={1} width="calc(100% - 2rem)" mx="auto">
         <Grid container spacing={1} justifyContent="center">
-            {children}
+          {children}
         </Grid>
       </SoftBox>
       <Footer />

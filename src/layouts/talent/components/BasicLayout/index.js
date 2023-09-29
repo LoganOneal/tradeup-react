@@ -28,17 +28,23 @@ import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import PageLayout from "examples/LayoutContainers/PageLayout";
 
 // Authentication layout components
-import Footer from "layouts/authentication/components/Footer";
+import Footer from "examples/Footer";
 
 function BasicLayout({ title, description, image, children }) {
   return (
     <PageLayout>
-      <DefaultNavbar
-        action={{
-          type: "external",
-          route: "https://creative-tim.com/product/soft-ui-dashboard-react",
-          label: "free download",
+<DefaultNavbar
+        action1={{
+          type: "internet",
+          route: "/talent/info",
+          label: "Tradesworkers",
           color: "dark",
+        }}
+        action2={{
+          type: "external",
+          route: "/employers/info",
+          label: "Emlpoyers",
+          color: "secondary",
         }}
       />
       <SoftBox
