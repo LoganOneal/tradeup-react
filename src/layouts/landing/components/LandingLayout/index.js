@@ -122,11 +122,10 @@ function LandingLayout({ color, header, title, description, image, top, children
       >
 
         <Grid container justifyContent="center" py={8}>
-          <Grid item xs={10} lg={8}>
-
-            <SoftBox py={5}>
-              <Grid container spacing={3}>
-                <Grid item xs={12} md={6} xl={4}>
+          <Grid xs={10} lg={8}>
+            <SoftBox py={2}>
+              <Grid container spacing={3} justifyContent="center">
+                <Grid item xs={12} md={6} xl={4} justifyContent={"center"}>
                   <InfoCard
                     image={workerIcon}
                     title="Better for Job Seekers"
