@@ -123,7 +123,7 @@ function LandingLayout({ color, header, title, description, image, top, children
 
         <Grid container justifyContent="center" py={8}>
           <Grid xs={10} lg={8}>
-            <SoftBox py={2}>
+            <SoftBox>
               <Grid container spacing={3} justifyContent="center">
                 <Grid item xs={12} md={6} xl={4} justifyContent={"center"}>
                   <InfoCard
@@ -149,7 +149,7 @@ function LandingLayout({ color, header, title, description, image, top, children
               </Grid>
             </SoftBox>
 
-            <SoftBox sx={{ textAlign: "center" }}>
+            <SoftBox sx={{ textAlign: "center" }} pt={8}>
               <SoftTypography variant="h2" fontWeight="bold" color={color} textGradient>
               More than helping you find your dream job… we help you manage your career.
               </SoftTypography>

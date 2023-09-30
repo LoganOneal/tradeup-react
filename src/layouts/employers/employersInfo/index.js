@@ -28,14 +28,18 @@ import SoftBox from "components/SoftBox";
 import SoftTypography from "components/SoftTypography";
 import SoftInput from "components/SoftInput";
 import SoftButton from "components/SoftButton";
+import InfoCard from "../components/InfoCard/InfoCard";
 
 // Authentication layout components
-import BasicLayout from "layouts/talent/components/BasicLayout";
+import InfoLayout from "layouts/employers/components/InfoLayout";
 import Socials from "layouts/authentication/components/Socials";
 import Separator from "layouts/authentication/components/Separator";
 
 // Images
 import curved6 from "assets/images/talent.jpg";
+import reduceCostIcon from "assets/images/illustrations/reduce_cost.png"
+import welderIcon from "assets/images/illustrations/welder.png"
+import skilledTalentIcon from "assets/images/illustrations/skilled_talent.jpg"
 
 function EmployersInfo() {
   const [agreement, setAgremment] = useState(true);
@@ -43,37 +47,36 @@ function EmployersInfo() {
   const handleSetAgremment = () => setAgremment(!agreement);
 
   return (
-    <BasicLayout
-      title="TradeUp early access."
-      description=""
+    <InfoLayout
+      title="Find skilled talent faster. Use AI to find, vet, and seek out talent."
+      description="Use these awesome forms to login or create new account in your project for free."
       image={curved6}
+      buttonLink="/employers/intake"
     >
-      <Grid item xs={11} sm={9} md={5} lg={5} xl={6}>
-        <Card>
-          <SoftBox p={3} textAlign="left">
-              <SoftTypography variant="body2" fontWeight="medium">
-              We&apos;ll be reaching out to you shortly to extend an invitation to join our platform, 
-              where you&apos;ll gain access to a curated selection of the best and brightest in the field. 
-              </SoftTypography><br />
-              <SoftTypography variant="body2">
-              Get ready to streamline your hiring process and find the perfect fit for your team. 
-              Elevate your workforce with us!
-              </SoftTypography>
-          </SoftBox>
-          <SoftBox pt={0} pb={3} px={3}>
-            <SoftBox component="form" role="form" textAlign="center">
-              <SoftButton
-                component={Link}
-                to={"/employers/intake"}
-                variant="gradient"
-                color="info">
-                Create my Employer Profile
-              </SoftButton>
-            </SoftBox>
-          </SoftBox>
-        </Card>
+      <Grid container spacing={4} justifyContent="center" pt={26}>
+        <Grid item xs={12} md={6} lg={4} xl={4} justifyContent={"center"}>
+          <InfoCard
+            image={reduceCostIcon}
+            title="Find talent at 50% of the cost"
+            description=""
+          />
+        </Grid>
+        <Grid item xs={12} md={6} lg={4} xl={4} justifyContent={"center"}>
+          <InfoCard
+            image={welderIcon}
+            title="Match with reliable and job-specific talent all the time"
+            description=""
+          />
+        </Grid>
+        <Grid item xs={12} md={6} lg={4} xl={4} justifyContent={"center"}>
+          <InfoCard
+            image={skilledTalentIcon}
+            title="Hire skilled talent in 10 days"
+            description=""
+          />
+        </Grid>
       </Grid>
-    </BasicLayout>
+    </InfoLayout>
   );
 }
 

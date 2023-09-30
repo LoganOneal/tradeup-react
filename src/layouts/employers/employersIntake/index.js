@@ -80,7 +80,7 @@ function EmployersIntake() {
       description="We will use this information to match you with ideal job canidates"
       image={curved6}
     >
-      <Grid item xs={8} sm={9} md={5} lg={4} xl={8}>
+      <Grid item xs={8} sm={9} md={6} lg={10} xl={8}>
         <Card sx={{ width: "100%" }}>
           <SoftBox p={3} textAlign="center">
             <SoftTypography variant="h5" fontWeight="medium">
@@ -135,7 +135,7 @@ function EmployersIntake() {
                     <SoftInput type="email" placeholder="Email" name="email" value={formData.email} onChange={handleInputChange} />
                   </SoftBox>
                 </Grid>
-                <Grid item xl={12} sm={6} justifyContent={"center"}>
+                <Grid item xs={12} justifyContent={"center"}>
                   <SoftBox>
                     <SoftButton type="submit" variant="gradient" color="dark" fullWidth>
                       Submit

@@ -70,11 +70,6 @@ function BasicLayout({ title, description, image, children }) {
                 {title}
               </SoftTypography>
             </SoftBox>
-            <SoftBox mb={2}>
-              <SoftTypography variant="body2" color="white" fontWeight="regular">
-                {description}
-              </SoftTypography>
-            </SoftBox>
           </Grid>
         </Grid>
       </SoftBox>

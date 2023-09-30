@@ -31,6 +31,7 @@
     "react-countup": "6.4.2",
     "react-dom": ">=16.8.0",
     "react-flatpickr": "3.10.13",
+    "react-rotating-text": "^1.4.1",
     "react-router-dom": "6.11.1",
     "react-scripts": "5.0.1",
     "stylis": "4.2.0",
@@ -44,8 +45,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
-    "install:peer-deps": "npm install --legacy-peer-deps", 
-    "server": "node-env-run server --exec nodemon | pino-colada", 
+    "install:peer-deps": "npm install --legacy-peer-deps",
+    "server": "node-env-run server --exec nodemon | pino-colada",
     "dev": "run-p server start"
   },
   "proxy": "http://localhost:3001",

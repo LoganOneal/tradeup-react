@@ -23,19 +23,24 @@ import Card from "@mui/material/Card";
 import Checkbox from "@mui/material/Checkbox";
 import Grid from "@mui/material/Grid";
 
+// React Rotating Text
+import ReactRotatingText from 'react-rotating-text';
+
 // Soft UI Dashboard React components
 import SoftBox from "components/SoftBox";
 import SoftTypography from "components/SoftTypography";
 import SoftInput from "components/SoftInput";
 import SoftButton from "components/SoftButton";
+import InfoCard from "examples/Cards/InfoCard/InfoCard";
 
 // Authentication layout components
-import BasicLayout from "layouts/talent/components/BasicLayout";
+import InfoLayout from "layouts/employers/components/InfoLayout";
 import Socials from "layouts/authentication/components/Socials";
 import Separator from "layouts/authentication/components/Separator";
 
 // Images
 import curved6 from "assets/images/talent.jpg";
+import employerIcon from "assets/images/illustrations/employers_icon.png"
 
 function TalentInfo() {
   const [agreement, setAgremment] = useState(true);
@@ -43,40 +48,33 @@ function TalentInfo() {
   const handleSetAgremment = () => setAgremment(!agreement);
 
   return (
-    <BasicLayout
-      title="TradeUp early access."
-      description=""
+    <InfoLayout
+      title="America’s physical industries are back! Find high-paying jobs in Manufacturing, logistics, warehousing, construction"
+      description="Use these awesome forms to login or create new account in your project for free."
       image={curved6}
+      buttonLink="/talent/intake"
     >
-      <Grid item xs={11} sm={9} md={5} lg={5} xl={6}>
-        <Card>
-          <SoftBox p={3} textAlign="left">
-              <SoftTypography variant="body2" fontWeight="medium">
-                We are thrilled to announce that we are now in our early access stages,
-                gearing up to revolutionize the way you connect with your ideal job
-                opportunities.
-              </SoftTypography><br />
-              <SoftTypography variant="body2">
-                Our platform is designed to streamline the job-seeking process,
-                matching your unique skills and expertise with the perfect role.
-                Expect an invitation from us shortly to join this dynamic community,
-                where you will have access to a curated selection of top-tier employers and exciting career prospects.
+      <Grid container justifyContent="center" pt={22}>
+          <Grid xs={10} lg={10}>
+            <SoftBox sx={{ textAlign: "center" }} pt={8}>
+                <SoftTypography variant="h2" fontWeight="bold" color={"info"} textGradient>
+                Find your next high paying job in&nbsp;
+                </SoftTypography>
+              <SoftTypography variant="h2" fontWeight="bold" color={"dark"} textGradient>
+               <ReactRotatingText items={['Manufacturing', 'Logistics', 'Warehousing', 'Construction', 'Automotive']} />
               </SoftTypography>
-          </SoftBox>
-          <SoftBox pt={0} pb={3} px={3}>
-            <SoftBox component="form" role="form" textAlign="center">
-              <SoftButton
-                component={Link}
-                to={"/talent/intake"}
-                variant="gradient"
-                color="info">
-                Create my Profile
-              </SoftButton>
+              <SoftBox mt={3}>
+                <SoftTypography variant="body2" color="text">
+                We understand the significance of individuals have rightfully earned the title of tradesperson, as they are the foundation of our nation. 
+                TradeUp strives to bridge the gap in skilled labor by uniting qualified tradespeople with employers who highly value their expertise.
+                </SoftTypography>
+              </SoftBox>
             </SoftBox>
-          </SoftBox>
-        </Card>
-      </Grid>
-    </BasicLayout>
+
+          </Grid>
+        </Grid>
+
+    </InfoLayout>
   );
 }
 
