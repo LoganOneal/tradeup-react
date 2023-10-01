@@ -62,7 +62,7 @@ function EmployersInfo() {
         <Grid xs={10} lg={10} pb={3}>
           <SoftBox sx={{ textAlign: "center" }} pt={8}>
             <SoftTypography variant="h2" fontWeight="bold" color={"info"} textGradient>
-              Hire skilled talent in &nbsp;
+              Hire skilled talent in&nbsp;
             </SoftTypography>
             <SoftTypography variant="h2" fontWeight="bold" color={"dark"} textGradient>
               <ReactRotatingText items={['Manufacturing', 'Logistics', 'Warehousing', 'Construction', 'Automotive']} />

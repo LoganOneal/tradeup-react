@@ -148,7 +148,6 @@ function LandingLayout({ color, header, title, description, image, top, children
                 </Grid>
               </Grid>
             </SoftBox>
-
             <SoftBox sx={{ textAlign: "center" }} pt={8}>
               <SoftTypography variant="h2" fontWeight="bold" color={color} textGradient>
               More than helping you find your dream job… we help you manage your career.

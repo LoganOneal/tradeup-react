@@ -50,14 +50,14 @@ function TalentInfo() {
 
   return (
     <InfoLayout
-      title="America’s physical industries are back! Find high-paying jobs in Manufacturing, logistics, warehousing, construction"
+      title="Finding a job just got a lot easier. Use AI to get a resume, job matches, career advice"
       description="Use these awesome forms to login or create new account in your project for free."
       image={curved6}
       buttonLink="/talent/intake"
     >
       <Grid container justifyContent="center" pt={22}>
         <Grid xs={10} lg={10}>
-          <SoftBox sx={{ textAlign: "center" }} pt={6}>
+          <SoftBox sx={{ textAlign: "center" }} pt={}>
             <SoftTypography variant="h2" fontWeight="bold" color={"info"} textGradient>
               Find your next high paying job in&nbsp;
             </SoftTypography>
