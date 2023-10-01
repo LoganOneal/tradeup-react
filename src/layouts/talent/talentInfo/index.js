@@ -41,6 +41,7 @@ import Separator from "layouts/authentication/components/Separator";
 // Images
 import curved6 from "assets/images/talent.jpg";
 import employerIcon from "assets/images/illustrations/employers_icon.png"
+import densoLogo from "assets/images/logos/denso_logo_grey.png"
 
 function TalentInfo() {
   const [agreement, setAgremment] = useState(true);
@@ -55,25 +56,48 @@ function TalentInfo() {
       buttonLink="/talent/intake"
     >
       <Grid container justifyContent="center" pt={22}>
-          <Grid xs={10} lg={10}>
-            <SoftBox sx={{ textAlign: "center" }} pt={8}>
-                <SoftTypography variant="h2" fontWeight="bold" color={"info"} textGradient>
-                Find your next high paying job in&nbsp;
-                </SoftTypography>
-              <SoftTypography variant="h2" fontWeight="bold" color={"dark"} textGradient>
-               <ReactRotatingText items={['Manufacturing', 'Logistics', 'Warehousing', 'Construction', 'Automotive']} />
-              </SoftTypography>
-              <SoftBox mt={3}>
-                <SoftTypography variant="body2" color="text">
-                We understand the significance of individuals have rightfully earned the title of tradesperson, as they are the foundation of our nation. 
+        <Grid xs={10} lg={10}>
+          <SoftBox sx={{ textAlign: "center" }} pt={6}>
+            <SoftTypography variant="h2" fontWeight="bold" color={"info"} textGradient>
+              Find your next high paying job in&nbsp;
+            </SoftTypography>
+            <SoftTypography variant="h2" fontWeight="bold" color={"dark"} textGradient>
+              <ReactRotatingText items={['Manufacturing', 'Logistics', 'Warehousing', 'Construction', 'Automotive']} />
+            </SoftTypography>
+            <SoftBox my={3}>
+              <SoftTypography variant="body2" color="text">
+                We understand the significance of individuals have rightfully earned the title of tradesperson, as they are the foundation of our nation.
                 TradeUp strives to bridge the gap in skilled labor by uniting qualified tradespeople with employers who highly value their expertise.
-                </SoftTypography>
-              </SoftBox>
+              </SoftTypography>
             </SoftBox>
-
+            <SoftBox mt={6}>
+              <SoftTypography variant="h2" fontWeight="bold" color={"dark"} textGradient>
+                At companies like..
+              </SoftTypography>
+            </SoftBox>
+          </SoftBox>
+          <Grid container spacing={3} justifyContent="center">
+            <Grid item xs={4} md={4} lg={4} xl={2}>
+              <SoftBox component="img" src={densoLogo} width="100%" borderRadius="lg" />
+            </Grid>
+            <Grid item xs={4} md={4} lg={4} xl={2}>
+              <SoftBox component="img" src={densoLogo} width="100%" borderRadius="lg" />
+            </Grid>            
+            <Grid item xs={4} md={4} lg={4} xl={2}>
+              <SoftBox component="img" src={densoLogo} width="100%" borderRadius="lg" />
+            </Grid>            
+            <Grid item xs={4} md={4} lg={4} xl={2}>
+              <SoftBox component="img" src={densoLogo} width="100%" borderRadius="lg" />
+            </Grid>
+            <Grid item xs={4} md={4} lg={4} xl={2}>
+              <SoftBox component="img" src={densoLogo} width="100%" borderRadius="lg" />
+            </Grid>
+            <Grid item xs={4} md={4} lg={4} xl={2}>
+              <SoftBox component="img" src={densoLogo} width="100%" borderRadius="lg" />
+            </Grid>            
           </Grid>
         </Grid>
-
+      </Grid>
     </InfoLayout>
   );
 }

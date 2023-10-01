@@ -18,6 +18,9 @@ import { useState } from "react";
 // react-router-dom components
 import { Link } from "react-router-dom";
 
+// React Rotating Text
+import ReactRotatingText from 'react-rotating-text';
+
 // @mui material components
 import Card from "@mui/material/Card";
 import Checkbox from "@mui/material/Checkbox";
@@ -53,7 +56,20 @@ function EmployersInfo() {
       image={curved6}
       buttonLink="/employers/intake"
     >
+
+
       <Grid container spacing={4} justifyContent="center" pt={26}>
+        <Grid xs={10} lg={10} pb={3}>
+          <SoftBox sx={{ textAlign: "center" }} pt={8}>
+            <SoftTypography variant="h2" fontWeight="bold" color={"info"} textGradient>
+              Hire skilled talent in &nbsp;
+            </SoftTypography>
+            <SoftTypography variant="h2" fontWeight="bold" color={"dark"} textGradient>
+              <ReactRotatingText items={['Manufacturing', 'Logistics', 'Warehousing', 'Construction', 'Automotive']} />
+            </SoftTypography>
+          </SoftBox>
+        </Grid>
+
         <Grid item xs={12} md={6} lg={4} xl={4} justifyContent={"center"}>
           <InfoCard
             image={reduceCostIcon}
