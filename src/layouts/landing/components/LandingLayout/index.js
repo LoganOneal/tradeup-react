@@ -20,6 +20,7 @@ import ivancik from "assets/images/ivancik.jpg";
 // @mui material components
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
+import routes from "routes";
 
 // Soft UI Dashboard React components
 import SoftBox from "components/SoftBox";
@@ -42,20 +43,24 @@ import employerIcon from "assets/images/illustrations/employers_icon.png"
 function LandingLayout({ color, header, title, description, image, top, children }) {
   return (
     <PageLayout background="white">
-      <DefaultNavbar
-        action1={{
-          type: "internet",
-          route: "/talent/info",
-          label: "Tradesworkers",
-          color: "dark",
-        }}
-        action2={{
-          type: "external",
-          route: "/employers/info",
-          label: "Emlpoyers",
-          color: "secondary",
-        }}
-      />
+        <DefaultNavbar
+          action1={{
+            type: "internet",
+            route: "/talent/info",
+            label: "Tradesworkers",
+            color: "dark",
+          }}
+          action2={{
+            type: "external",
+            route: "/employers/info",
+            label: "Emlpoyers",
+            color: "secondary",
+          }}
+          center
+          relative
+          transparent
+        />
+
       <Grid
         container
         justifyContent="center"
@@ -129,33 +134,33 @@ function LandingLayout({ color, header, title, description, image, top, children
                   <InfoCard
                     image={workerIcon}
                     title="Better for Job Seekers"
-                    description="Leverage our technological services with your skills and get hired quickly."
+                    description="Let Us and AI Navigate Your Job Hunt: Get Discovered, Vetted, and Hired"
                   />
                 </Grid>
                 <Grid item xs={12} md={6} xl={4}>
                   <InfoCard
                     image={employerIcon}
                     title="Better for Employers"
-                    description="Find the best talent for your business faster and more effeciently."
+                    description="Unlocking Skilled Talent in Weeks, Not Months: Find, Vet, and Hire Faster with AI."
                   />
                 </Grid>
                 <Grid item xs={12} md={6} xl={4}>
                   <InfoCard
                     image={betterTogetherIcon}
                     title="Skilled workers, Meet High Quality Employers"
-                    description="Our technology will match you with the best employers for your skills."
+                    description="Connect reliable talent with skilled workers 10x faster."
                   />
                 </Grid>
               </Grid>
             </SoftBox>
             <SoftBox sx={{ textAlign: "center" }} pt={8}>
               <SoftTypography variant="h2" fontWeight="bold" color={color} textGradient>
-              More than helping you find your dream job… we help you manage your career.
+                More than helping you find your dream job… we help you manage your career.
               </SoftTypography>
               <SoftBox mt={3}>
                 <SoftTypography variant="body2" color="text">
-                We understand the significance of individuals have rightfully earned the title of tradesperson, as they are the foundation of our nation. 
-                TradeUp strives to bridge the gap in skilled labor by uniting qualified tradespeople with employers who highly value their expertise.
+                  We understand the significance of individuals have rightfully earned the title of tradesperson, as they are the foundation of our nation.
+                  LaborUp strives to bridge the gap in skilled labor by uniting qualified tradespeople with employers who highly value their expertise.
                 </SoftTypography>
               </SoftBox>
             </SoftBox>

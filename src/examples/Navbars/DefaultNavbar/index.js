@@ -70,74 +70,76 @@ function DefaultNavbar({ transparent, light, action1, action2 }) {
   }, []);
 
   return (
-    <Container>
-      <SoftBox
-        py={1.5}
-        px={{ xs: transparent ? 4 : 5, sm: transparent ? 2 : 5, lg: transparent ? 0 : 5 }}
-        my={2}
-        mx={3}
-        width="calc(100% - 48px)"
-        borderRadius="section"
-        shadow={transparent ? "none" : "md"}
-        color={light ? "white" : "dark"}
-        display="flex"
-        justifyContent="space-between"
-        alignItems="center"
-        position="absolute"
-        left={0}
-        zIndex={3}
-        sx={({ palette: { transparent: transparentColor, white }, functions: { rgba } }) => ({
-          backgroundColor: transparent ? transparentColor.main : rgba(white.main, 0.8),
-          backdropFilter: transparent ? "none" : `saturate(200%) blur(30px)`,
-        })}
-      >
-        <SoftBox component={Link} to="/" py={transparent ? 1.5 : 0.75} lineHeight={1}>
-          <SoftTypography variant="button" fontWeight="bold" color={light ? "white" : "dark"}>
-            TradeUP
-          </SoftTypography>
-        </SoftBox>
-        <SoftBox>
-          <SoftBox display={{ xs: "none", lg: "inline-block" }} mx={3}>
-            <SoftButton
-              component={Link}
-              to={action1.route}
-              variant="gradient"
-              color={action1.color ? action1.color : "info"}
-              size="small"
-              circular
-            >
-              {action1.label}
-            </SoftButton>
-          </SoftBox>
-
-          <SoftBox display={{ xs: "none", lg: "inline-block" }}>
-            <SoftButton
-              component={Link}
-              to={action2.route}
-              variant="gradient"
-              color={action2.color ? action2.color : "info"}
-              size="small"
-              circular
-            >
-              {action2.label}
-            </SoftButton>
-          </SoftBox>
-        </SoftBox>
-
+    <SoftBox variant="gradient" bgColor="white" shadow="sm" py={.75}>
+      <Container>
         <SoftBox
-          display={{ xs: "inline-block", lg: "none" }}
-          lineHeight={0}
           py={1.5}
-          pl={1.5}
-          color="inherit"
-          sx={{ cursor: "pointer" }}
-          onClick={openMobileNavbar}
+          px={{ xs: 4, sm: transparent ? 2 : 3, lg: transparent ? 0 : 2 }}
+          my={0}
+          mx={3}
+          width="calc(100% - 48px)"
+          borderRadius="xl"
+          shadow={transparent ? "none" : "md"}
+          color={light ? "white" : "dark"}
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          position="relative"
+          left={0}
+          zIndex={3}
+          sx={({ palette: { transparent: transparentColor, white }, functions: { rgba } }) => ({
+            backgroundColor: transparent ? transparentColor.main : rgba(white.main, 0.8),
+            backdropFilter: transparent ? "none" : `saturate(200%) blur(30px)`,
+          })}
         >
-          <Icon fontSize="default">{mobileNavbar ? "close" : "menu"}</Icon>
+          <SoftBox component={Link} to="/" py={transparent ? 1.5 : 0.75} lineHeight={1}>
+            <SoftTypography variant="button" fontWeight="bold" color={"dark"}>
+              TradeUP
+            </SoftTypography>
+          </SoftBox>
+          <SoftBox>
+            <SoftBox display={{ xs: "none", lg: "inline-block" }} mx={3}>
+              <SoftButton
+                component={Link}
+                to={action1.route}
+                variant="gradient"
+                color={action1.color ? action1.color : "info"}
+                size="small"
+                circular
+              >
+                {action1.label}
+              </SoftButton>
+            </SoftBox>
+
+            <SoftBox display={{ xs: "none", lg: "inline-block" }}>
+              <SoftButton
+                component={Link}
+                to={action2.route}
+                variant="gradient"
+                color={action2.color ? action2.color : "info"}
+                size="small"
+                circular
+              >
+                {action2.label}
+              </SoftButton>
+            </SoftBox>
+          </SoftBox>
+
+          <SoftBox
+            display={{ xs: "inline-block", lg: "none" }}
+            lineHeight={0}
+            py={1.5}
+            pl={1.5}
+            color="inherit"
+            sx={{ cursor: "pointer" }}
+            onClick={openMobileNavbar}
+          >
+            <Icon fontSize="default">{mobileNavbar ? "close" : "menu"}</Icon>
+          </SoftBox>
         </SoftBox>
-      </SoftBox>
-      {mobileView && <DefaultNavbarMobile open={mobileNavbar} close={closeMobileNavbar} />}
-    </Container>
+        {mobileView && <DefaultNavbarMobile open={mobileNavbar} close={closeMobileNavbar} />}
+      </Container>
+    </SoftBox>
   );
 }
 

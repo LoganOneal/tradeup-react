@@ -57,7 +57,7 @@ function TalentInfo() {
     >
       <Grid container justifyContent="center" pt={22}>
         <Grid xs={10} lg={10}>
-          <SoftBox sx={{ textAlign: "center" }} pt={}>
+          <SoftBox sx={{ textAlign: "center" }} pt={3}>
             <SoftTypography variant="h2" fontWeight="bold" color={"info"} textGradient>
               Find your next high paying job in&nbsp;
             </SoftTypography>
@@ -67,7 +67,7 @@ function TalentInfo() {
             <SoftBox my={3}>
               <SoftTypography variant="body2" color="text">
                 We understand the significance of individuals have rightfully earned the title of tradesperson, as they are the foundation of our nation.
-                TradeUp strives to bridge the gap in skilled labor by uniting qualified tradespeople with employers who highly value their expertise.
+                LaborUp strives to bridge the gap in skilled labor by uniting qualified tradespeople with employers who highly value their expertise.
               </SoftTypography>
             </SoftBox>
             <SoftBox mt={6}>

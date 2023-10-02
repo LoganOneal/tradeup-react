@@ -49,7 +49,7 @@ function Landing() {
   return (
     <LandingLayout
       title="A Skilled Workforce Within Reach"
-      description="Tradeworkers are the unsung heroes of our economy. We connect businesses with dependable, hard-working skilled tradespeople and laborers — when and where you need them."
+      description="Empowering Our Industrial Workforce: Bridging Talent and Jobs with AI."
       image={curved9}
     >
         <SoftBox display="flex" mb={2}>
