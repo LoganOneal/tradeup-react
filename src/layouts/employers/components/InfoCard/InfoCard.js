@@ -41,6 +41,7 @@ function InfoCard({ image, title, description }) {
         boxShadow: "none",
         overflow: "visible",
       }}
+      transparent
     >
       <SoftBox position="relative" width="100.25%" borderRadius="xl" >
         <CardMedia

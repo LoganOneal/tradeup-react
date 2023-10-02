@@ -42,6 +42,20 @@ function InfoCard({ image, title, description }) {
         overflow: "visible",
       }}
     >
+      <SoftBox pt={3} sx={{ textAlign: "center" }}>
+        <SoftBox mb={1}>
+          <SoftTypography
+            component="a"
+            target="_blank"
+            rel="noreferrer"
+            variant="h4"
+            textTransform="capitalize"
+            sx={{ whiteSpace: "nowrap" }}
+          >
+            {title}
+          </SoftTypography>
+        </SoftBox>
+      </SoftBox>
       <SoftBox position="relative" width="100.25%" borderRadius="xl" >
         <CardMedia
           src={image}
@@ -56,19 +70,8 @@ function InfoCard({ image, title, description }) {
         />
       </SoftBox>
       <SoftBox pt={3} px={0.5} sx={{ textAlign: "center" }}>
-        <SoftBox mb={1}>
-            <SoftTypography
-              component="a"
-              target="_blank"
-              rel="noreferrer"
-              variant="h5"
-              textTransform="capitalize"
-            >
-              {title}
-            </SoftTypography>
-        </SoftBox>
         <SoftBox mb={3} lineHeight={0}>
-          <SoftTypography variant="button" fontWeight="regular" color="text">
+          <SoftTypography fontWeight="regular" color="text">
             {description}
           </SoftTypography>
         </SoftBox>

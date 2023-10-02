@@ -21,6 +21,7 @@ import ivancik from "assets/images/ivancik.jpg";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import routes from "routes";
+import ReactRotatingText from 'react-rotating-text';
 
 // Soft UI Dashboard React components
 import SoftBox from "components/SoftBox";
@@ -43,23 +44,26 @@ import employerIcon from "assets/images/illustrations/employers_icon.png"
 function LandingLayout({ color, header, title, description, image, top, children }) {
   return (
     <PageLayout background="white">
+      <SoftBox variant="gradient" bgColor="white" shadow="sm" py={0.25}>
         <DefaultNavbar
+          routes={routes}
           action1={{
-            type: "internet",
+            type: "external",
             route: "/talent/info",
-            label: "Tradesworkers",
-            color: "dark",
+            label: "Skilled Workers",
+            color: "info",
           }}
           action2={{
             type: "external",
             route: "/employers/info",
-            label: "Emlpoyers",
-            color: "secondary",
+            label: "Employers",
+            color: "info",
           }}
-          center
-          relative
           transparent
+          relative
+          center
         />
+      </SoftBox>
 
       <Grid
         container
@@ -75,8 +79,11 @@ function LandingLayout({ color, header, title, description, image, top, children
               {!header ? (
                 <>
                   <SoftBox mb={1}>
-                    <SoftTypography variant="h1" fontWeight="bold" color={color} textGradient>
-                      {title}
+                    <SoftTypography variant="h1" fontWeight="bold" color={color} textGradient sx={{ whiteSpace: "nowrap" }}>
+                      A Skilled Workforce
+                    </SoftTypography>
+                    <SoftTypography variant="h1" fontWeight="bold" color={color} textGradient sx={{ whiteSpace: "nowrap" }}>
+                      Within Reach
                     </SoftTypography>
                   </SoftBox>
                   <SoftTypography variant="body1" fontWeight="regular" color="text">
@@ -140,29 +147,26 @@ function LandingLayout({ color, header, title, description, image, top, children
                 <Grid item xs={12} md={6} xl={4}>
                   <InfoCard
                     image={employerIcon}
-                    title="Better for Employers"
+                    title="Employers Love It"
                     description="Unlocking Skilled Talent in Weeks, Not Months: Find, Vet, and Hire Faster with AI."
                   />
                 </Grid>
-                <Grid item xs={12} md={6} xl={4}>
+                <Grid item xs={12} md={6} xl={5}>
                   <InfoCard
                     image={betterTogetherIcon}
-                    title="Skilled workers, Meet High Quality Employers"
+                    title="Skilled workers 🤝 Quality Employers"
                     description="Connect reliable talent with skilled workers 10x faster."
                   />
                 </Grid>
               </Grid>
             </SoftBox>
             <SoftBox sx={{ textAlign: "center" }} pt={8}>
-              <SoftTypography variant="h2" fontWeight="bold" color={color} textGradient>
-                More than helping you find your dream job… we help you manage your career.
+              <SoftTypography variant="h2" fontWeight="bold" color={"info"} textGradient>
+                Find your next high paying job in&nbsp;
               </SoftTypography>
-              <SoftBox mt={3}>
-                <SoftTypography variant="body2" color="text">
-                  We understand the significance of individuals have rightfully earned the title of tradesperson, as they are the foundation of our nation.
-                  LaborUp strives to bridge the gap in skilled labor by uniting qualified tradespeople with employers who highly value their expertise.
-                </SoftTypography>
-              </SoftBox>
+              <SoftTypography variant="h2" fontWeight="bold" color={"dark"} textGradient>
+                <ReactRotatingText items={['Manufacturing', 'Logistics', 'Warehousing', 'Construction', 'Automotive']} />
+              </SoftTypography>
             </SoftBox>
 
           </Grid>
@@ -173,8 +177,6 @@ function LandingLayout({ color, header, title, description, image, top, children
 
         </Grid>
       </Grid>
-
-      <Footer />
     </PageLayout>
   );
 }

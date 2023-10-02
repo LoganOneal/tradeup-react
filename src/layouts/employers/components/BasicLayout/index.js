@@ -33,20 +33,26 @@ import Footer from "examples/Footer";
 function BasicLayout({ title, description, image, children }) {
   return (
     <PageLayout>
-      <DefaultNavbar
-        action1={{
-          type: "internet",
-          route: "/talent/info",
-          label: "Tradesworkers",
-          color: "dark",
-        }}
-        action2={{
-          type: "external",
-          route: "/employers/info",
-          label: "Emlpoyers",
-          color: "secondary",
-        }}
-      />
+      <SoftBox variant="gradient" bgColor="white" shadow="sm" py={0.25}>
+        <DefaultNavbar
+          routes={routes}
+          action1={{
+            type: "external",
+            route: "/talent/info",
+            label: "Skilled Workers",
+            color: "info",
+          }}
+          action2={{
+            type: "external",
+            route: "/employers/info",
+            label: "Employers",
+            color: "info",
+          }}
+          transparent
+          relative
+          center
+        />
+      </SoftBox>
       <SoftBox
         width="100%"
         minHeight="85vh"
@@ -78,7 +84,6 @@ function BasicLayout({ title, description, image, children }) {
           {children}
         </Grid>
       </SoftBox>
-      <Footer />
     </PageLayout>
   );
 }

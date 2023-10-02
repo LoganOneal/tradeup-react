@@ -35,22 +35,25 @@ import Footer from "layouts/authentication/components/Footer";
 function InfoLayout({ title, buttonLink, image, children }) {
     return (
         <PageLayout>
-            <DefaultNavbar
-                action1={{
-                    type: "internet",
-                    route: "/talent/info",
-                    label: "Tradesworkers",
-                    color: "dark",
-                }}
-                action2={{
-                    type: "external",
-                    route: "/employers/info",
-                    label: "Emlpoyers",
-                    color: "secondary",
-                }}
-                transparent
-                light
-            />
+            <SoftBox variant="gradient" bgColor="white" shadow="sm" py={0.25}>
+                <DefaultNavbar
+                    action1={{
+                        type: "external",
+                        route: "/talent/info",
+                        label: "Skilled Workers",
+                        color: "info",
+                    }}
+                    action2={{
+                        type: "external",
+                        route: "/employers/info",
+                        label: "Employers",
+                        color: "info",
+                    }}
+                    transparent
+                    relative
+                    center
+                />
+            </SoftBox>
             <SoftBox
                 width="calc(100% - 2rem)"
                 minHeight="50vh"
@@ -97,7 +100,6 @@ function InfoLayout({ title, buttonLink, image, children }) {
                     </Grid>
                 </Grid>
             </SoftBox>
-            <Footer />
         </PageLayout>
     );
 }
