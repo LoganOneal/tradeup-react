@@ -33,23 +33,9 @@ import Footer from "examples/Footer";
 function BasicLayout({ title, description, image, children }) {
   return (
     <PageLayout>
-<DefaultNavbar
-        action1={{
-          type: "internet",
-          route: "/talent/info",
-          label: "Tradesworkers",
-          color: "dark",
-        }}
-        action2={{
-          type: "external",
-          route: "/employers/info",
-          label: "Emlpoyers",
-          color: "secondary",
-        }}
-      />
       <SoftBox
         width="100%"
-        minHeight="85vh"
+        minHeight="105vh"
         sx={{
           backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
             image &&
@@ -82,7 +68,6 @@ function BasicLayout({ title, description, image, children }) {
           </Grid>
         </Grid>
       </SoftBox>
-      <Footer />
     </PageLayout>
   );
 }

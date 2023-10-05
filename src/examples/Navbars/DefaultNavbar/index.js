@@ -42,6 +42,9 @@ import DefaultNavbarMobile from "examples/Navbars/DefaultNavbar/DefaultNavbarMob
 // Material Kit 2 React base styles
 import breakpoints from "assets/theme/base/breakpoints";
 
+// images
+import laborupLogo from "assets/images/logos/laborup_logo.png";
+
 function DefaultNavbar({ brand, transparent, light, action1, action2, sticky, relative, center }) {
   const [dropdown, setDropdown] = useState("");
   const [dropdownEl, setDropdownEl] = useState("");
@@ -348,13 +351,11 @@ function DefaultNavbar({ brand, transparent, light, action1, action2, sticky, re
           <SoftBox
             component={Link}
             to="/"
-            lineHeight={1}
-            py={transparent ? 1.5 : 0.75}
+            lineHeight={.5}
+            py={0.75}
             pl={relative || transparent ? 0 : { xs: 0, lg: 1 }}
           >
-            <SoftTypography variant="button" fontWeight="bold" color={light ? "white" : "dark"}>
-              {brand}
-            </SoftTypography>
+            <SoftBox component="img" src={laborupLogo} alt={"laborup"} width="175px" borderRadius="lg" />
           </SoftBox>
           <SoftBox
             color="inherit"
@@ -365,32 +366,7 @@ function DefaultNavbar({ brand, transparent, light, action1, action2, sticky, re
           </SoftBox>
           {!mobileView &&
             <>
-              <SoftBox mx={3}>
-                <SoftButton
-                  component={Link}
-                  to={action1.route}
-                  variant={
-                    action1.color === "white" || action1.color === "default"
-                      ? "contained"
-                      : "gradient"
-                  }
-                  color={action1.color ? action1.color : "info"}
-                  size="small"
-                >
-                  {action1.label}
-                </SoftButton>
-              </SoftBox>
-              <SoftBox >
-                <SoftButton
-                  component={Link}
-                  to={action2.route}
-                  variant="outlined"
-                  color={action2.color ? action2.color : "info"}
-                  size="small"
-                >
-                  {action2.label}
-                </SoftButton>
-              </SoftBox>
+  
             </>
           }
           <SoftBox

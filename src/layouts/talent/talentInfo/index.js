@@ -23,6 +23,11 @@ import Card from "@mui/material/Card";
 import Checkbox from "@mui/material/Checkbox";
 import Grid from "@mui/material/Grid";
 
+// inifinite logo slider
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+import "@splidejs/splide/dist/css/splide.min.css";
+
 // React Rotating Text
 import ReactRotatingText from 'react-rotating-text';
 
@@ -50,8 +55,8 @@ function TalentInfo() {
 
   return (
     <InfoLayout
-      title="Finding a job just got a lot easier. Use AI to get a resume, job matches, career advice"
-      description="Use these awesome forms to login or create new account in your project for free."
+      title="Finding a job just got a lot easier. "
+      description="Use AI to get a resume, job matches, career advice"
       image={curved6}
       buttonLink="/talent/intake"
     >
@@ -82,10 +87,10 @@ function TalentInfo() {
             </Grid>
             <Grid item xs={4} md={4} lg={4} xl={2}>
               <SoftBox component="img" src={densoLogo} width="100%" borderRadius="lg" />
-            </Grid>            
+            </Grid>
             <Grid item xs={4} md={4} lg={4} xl={2}>
               <SoftBox component="img" src={densoLogo} width="100%" borderRadius="lg" />
-            </Grid>            
+            </Grid>
             <Grid item xs={4} md={4} lg={4} xl={2}>
               <SoftBox component="img" src={densoLogo} width="100%" borderRadius="lg" />
             </Grid>
@@ -94,8 +99,64 @@ function TalentInfo() {
             </Grid>
             <Grid item xs={4} md={4} lg={4} xl={2}>
               <SoftBox component="img" src={densoLogo} width="100%" borderRadius="lg" />
-            </Grid>            
+            </Grid>
           </Grid>
+          <SoftBox py={3} bgColor="secondary" sx={{ display: "flex", justifyContent: "center", position: "absolute", left: 0, right: 0 }}>
+            <Splide
+              options={{
+                type: "loop",
+                drag: "free",
+                gap: "10px",
+                arrows: false,
+                pagination: false,
+                perPage: 4,
+                autoScroll: {
+                  pauseOnHover: false,
+                  pauseOnFocus: false,
+                  rewind: false,
+                  speed: 1
+                }
+              }}
+              extensions={{ AutoScroll }}
+            >
+              <SplideSlide>
+                <img src="https://via.placeholder.com/150" alt="Image 1" />
+              </SplideSlide>
+              <SplideSlide>
+                <img src="https://via.placeholder.com/150" alt="Image 2" />
+              </SplideSlide>
+              <SplideSlide>
+                <img src="https://via.placeholder.com/150" alt="Image 3" />
+              </SplideSlide>
+              <SplideSlide>
+                <img src="https://via.placeholder.com/150" alt="Image 4" />
+              </SplideSlide>
+              <SplideSlide>
+                <img src="https://via.placeholder.com/150" alt="Image 5" />
+              </SplideSlide>
+              <SplideSlide>
+                <img src="https://via.placeholder.com/150" alt="Image 6" />
+              </SplideSlide>
+              <SplideSlide>
+                <img src="https://via.placeholder.com/150" alt="Image 7" />
+              </SplideSlide>
+              <SplideSlide>
+                <img src="https://via.placeholder.com/150" alt="Image 8" />
+              </SplideSlide>
+              <SplideSlide>
+                <img src="https://via.placeholder.com/150" alt="Image 8" />
+              </SplideSlide>
+              <SplideSlide>
+                <img src="https://via.placeholder.com/150" alt="Image 10" />
+              </SplideSlide>
+              <SplideSlide>
+                <img src="https://via.placeholder.com/150" alt="Image 11" />
+              </SplideSlide>
+              <SplideSlide>
+                <img src="https://via.placeholder.com/150" alt="Image 12" />
+              </SplideSlide>
+            </Splide>
+          </SoftBox>
         </Grid>
       </Grid>
     </InfoLayout>

@@ -49,7 +49,7 @@ function Landing() {
   return (
     <LandingLayout
       title="A Skilled Workforce Within Reach"
-      description="Empowering Our Industrial Workforce: Bridging Talent and Jobs with AI."
+      description="Bridging Talent and Jobs with AI"
       image={curved9}
     >
         <SoftBox display="flex" mb={2}>
@@ -57,7 +57,8 @@ function Landing() {
               component={Link}
               to={"/talent/info"}
               variant="gradient" 
-              color="info">
+              color="info"
+              size="large">
               Looking for Work?
             </SoftButton>
             <SoftBox px={1}>
@@ -65,7 +66,8 @@ function Landing() {
                 component={Link}
                 to={"/employers/info"}
                 variant="outlined"
-                color="info">
+                color="info"
+                size="large">
                 I Want to Hire
               </SoftButton>
           </SoftBox> 

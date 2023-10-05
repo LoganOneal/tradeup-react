@@ -80,7 +80,7 @@ function EmployersIntake() {
       description="We will use this information to match you with ideal job canidates"
       image={curved6}
     >
-      <Grid item xs={8} sm={9} md={6} lg={10} xl={8}>
+      <Grid item xs={10} sm={10} md={6} lg={10} xl={8}>
         <Card sx={{ width: "100%" }}>
           <SoftBox p={3} textAlign="center">
             <SoftTypography variant="h5" fontWeight="medium">

@@ -40,6 +40,7 @@ function InfoCard({ image, title, description }) {
         backgroundColor: "transparent",
         boxShadow: "none",
         overflow: "visible",
+        alignItems: "center",
       }}
     >
       <SoftBox pt={3} sx={{ textAlign: "center" }}>

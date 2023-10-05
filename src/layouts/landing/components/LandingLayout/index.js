@@ -44,7 +44,6 @@ import employerIcon from "assets/images/illustrations/employers_icon.png"
 function LandingLayout({ color, header, title, description, image, top, children }) {
   return (
     <PageLayout background="white">
-      <SoftBox variant="gradient" bgColor="white" shadow="sm" py={0.25}>
         <DefaultNavbar
           routes={routes}
           action1={{
@@ -63,7 +62,6 @@ function LandingLayout({ color, header, title, description, image, top, children
           relative
           center
         />
-      </SoftBox>
 
       <Grid
         container
@@ -73,20 +71,20 @@ function LandingLayout({ color, header, title, description, image, top, children
           margin: 0,
         }}
       >
-        <Grid item xs={11} sm={8} md={5} xl={3}>
+        <Grid item xs={11} sm={8} md={5} xl={4}>
           <SoftBox mt={top}>
             <SoftBox pt={2} >
               {!header ? (
                 <>
                   <SoftBox mb={1}>
                     <SoftTypography variant="h1" fontWeight="bold" color={color} textGradient sx={{ whiteSpace: "nowrap" }}>
-                      A Skilled Workforce
+                      A Skilled Industrial Workforce
                     </SoftTypography>
                     <SoftTypography variant="h1" fontWeight="bold" color={color} textGradient sx={{ whiteSpace: "nowrap" }}>
                       Within Reach
                     </SoftTypography>
                   </SoftBox>
-                  <SoftTypography variant="body1" fontWeight="regular" color="text">
+                  <SoftTypography variant="h3" fontWeight="regular" color="text">
                     {description}
                   </SoftTypography>
                 </>
@@ -151,7 +149,7 @@ function LandingLayout({ color, header, title, description, image, top, children
                     description="Unlocking Skilled Talent in Weeks, Not Months: Find, Vet, and Hire Faster with AI."
                   />
                 </Grid>
-                <Grid item xs={12} md={6} xl={5}>
+                <Grid item xs={12} md={6} xl={4}>
                   <InfoCard
                     image={betterTogetherIcon}
                     title="Skilled workers 🤝 Quality Employers"

@@ -32,28 +32,26 @@ import PageLayout from "examples/LayoutContainers/PageLayout";
 // Authentication layout components
 import Footer from "layouts/authentication/components/Footer";
 
-function InfoLayout({ title, buttonLink, image, children }) {
+function InfoLayout({ title, description, buttonLink, image, children }) {
     return (
         <PageLayout>
-            <SoftBox variant="gradient" bgColor="white" shadow="sm" py={0.25}>
-                <DefaultNavbar
-                    action1={{
-                        type: "external",
-                        route: "/talent/info",
-                        label: "Skilled Workers",
-                        color: "info",
-                    }}
-                    action2={{
-                        type: "external",
-                        route: "/employers/info",
-                        label: "Employers",
-                        color: "info",
-                    }}
-                    transparent
-                    relative
-                    center
-                />
-            </SoftBox>
+            <DefaultNavbar
+                action1={{
+                    type: "external",
+                    route: "/talent/info",
+                    label: "Skilled Workers",
+                    color: "info",
+                }}
+                action2={{
+                    type: "external",
+                    route: "/employers/info",
+                    label: "Employers",
+                    color: "info",
+                }}
+                transparent
+                relative
+                center
+            />
             <SoftBox
                 width="calc(100% - 2rem)"
                 minHeight="50vh"
@@ -79,6 +77,9 @@ function InfoLayout({ title, buttonLink, image, children }) {
                         <SoftBox mt={6} mb={3}>
                             <SoftTypography variant="h1" color="white" fontWeight="bold">
                                 {title}
+                            </SoftTypography>
+                            <SoftTypography variant="h4" color="white" fontWeight="regular">
+                                {description}
                             </SoftTypography>
                         </SoftBox>
                         <SoftBox mb={2} py={3}>

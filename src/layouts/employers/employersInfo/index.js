@@ -31,7 +31,7 @@ import SoftBox from "components/SoftBox";
 import SoftTypography from "components/SoftTypography";
 import SoftInput from "components/SoftInput";
 import SoftButton from "components/SoftButton";
-import InfoCard from "../components/InfoCard/InfoCard";
+import InfoCard from "examples/Cards/InfoCard/InfoCard";
 
 // Authentication layout components
 import InfoLayout from "layouts/employers/components/InfoLayout";
@@ -51,8 +51,8 @@ function EmployersInfo() {
 
   return (
     <InfoLayout
-      title="Find skilled talent faster. Use AI to find, vet, and seek out talent."
-      description="Use these awesome forms to login or create new account in your project for free."
+      title="Find skilled talent faster."
+      description="Use AI to find, vet, and seek out talent."
       image={curved6}
       buttonLink="/employers/intake"
     >
@@ -73,22 +73,22 @@ function EmployersInfo() {
         <Grid item xs={12} md={6} lg={4} xl={4} justifyContent={"center"}>
           <InfoCard
             image={reduceCostIcon}
-            title="Find talent at 50% of the cost"
-            description=""
+            title=""
+            description="Find talent at 50% of the cost"
           />
         </Grid>
         <Grid item xs={12} md={6} lg={4} xl={4} justifyContent={"center"}>
           <InfoCard
             image={welderIcon}
-            title="Match with reliable and job-specific talent all the time"
-            description=""
+            title=""
+            description="Match with reliable and job-specific talent all the time"
           />
         </Grid>
         <Grid item xs={12} md={6} lg={4} xl={4} justifyContent={"center"}>
           <InfoCard
             image={skilledTalentIcon}
-            title="Hire skilled talent in 10 days"
-            description=""
+            title=""
+            description="Hire skilled talent in 10 days"
           />
         </Grid>
       </Grid>
