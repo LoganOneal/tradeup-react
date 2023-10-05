@@ -52,6 +52,7 @@ function InfoCard({ image, title, description }) {
             variant="h4"
             textTransform="capitalize"
             sx={{ whiteSpace: "nowrap" }}
+            color="info"
           >
             {title}
           </SoftTypography>
