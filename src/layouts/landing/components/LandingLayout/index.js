@@ -147,7 +147,7 @@ function LandingLayout({ color, header, title, description, image, top, children
               </SoftTypography>
             </SoftBox>
 
-            <SoftBox py={3}>
+            <SoftBox py={5}>
               <Grid container spacing={3} justifyContent="center">
                 <Grid item xs={11} md={6} xl={4} justifyContent={"center"}>
                   <InfoCard

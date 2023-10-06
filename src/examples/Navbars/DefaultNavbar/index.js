@@ -331,7 +331,6 @@ function DefaultNavbar({ brand, transparent, light, action1, action2, sticky, re
   return (
       <SoftBox
         py={1}
-        px={{ xs: 4, sm: transparent ? 2 : 3, lg: transparent ? 0 : 2 }}
         my={relative ? 0 : 2}
         mx={relative ? 0 : 3}
         width={relative ? "100%" : "calc(100% - 48px)"}

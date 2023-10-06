@@ -44,26 +44,7 @@ function InfoCard({ image, title, description }) {
         alignItems: "center",
       }}
     >
-      <SoftBox pt={3} sx={{ textAlign: "center" }}>
-        <SoftBox mb={1}>
-          <SoftTypography
-            component="a"
-            target="_blank"
-            rel="noreferrer"
-            variant="h4"
-            textTransform="capitalize"
-            sx={{
-              whiteSpace: "nowrap",
-              [theme.breakpoints.down("sm")]: {
-                whiteSpace: "normal",
-              },
-            }}
-            color="info"
-          >
-            {title}
-          </SoftTypography>
-        </SoftBox>
-      </SoftBox>
+
       <SoftBox position="relative" width="100.25%" borderRadius="xl" >
         <CardMedia
           src={image}
@@ -79,7 +60,15 @@ function InfoCard({ image, title, description }) {
       </SoftBox>
       <SoftBox pt={3} px={0.5} sx={{ textAlign: "center" }}>
         <SoftBox mb={3} lineHeight={0}>
-          <SoftTypography fontWeight="regular" color="text">
+        <SoftTypography
+            component="a"
+            target="_blank"
+            rel="noreferrer"
+            variant="h4"
+            textTransform="capitalize"
+        
+            color="info"
+          >
             {description}
           </SoftTypography>
         </SoftBox>
