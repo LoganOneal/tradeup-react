@@ -68,13 +68,12 @@ function LandingLayout({ color, header, title, description, image, top, children
         container
         justifyContent="center"
         sx={{
-          minHeight: "75vh",
+          minHeight: "80vh",
           margin: 0,
         }}
       >
         <Grid item xs={11} sm={8} md={5} xl={4}>
-            <SoftBox sx={{ mt: { md: top } }}>
-            <SoftBox>
+            <SoftBox sx={{ mt: { md: top, xs: 6 } }}>
               {!header ? (
                 <>
                   <SoftBox mb={1}>
@@ -98,11 +97,10 @@ function LandingLayout({ color, header, title, description, image, top, children
               ) : (
                 header
               )}
-            </SoftBox>
             <SoftBox py={3}>{children}</SoftBox>
           </SoftBox>
         </Grid>
-        <Grid item xs={12} md={5}>
+        <Grid item xs={12} md={5} lg={5} xl={6}>
           <SoftBox
             height="100%"
             display={{ xs: "none", md: "block" }}
@@ -116,7 +114,7 @@ function LandingLayout({ color, header, title, description, image, top, children
             }}
           >
             <SoftBox
-              ml={-8}
+              ml={-10}
               height="100%"
               sx={{
                 backgroundImage: `url(${image})`,

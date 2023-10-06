@@ -329,7 +329,6 @@ function DefaultNavbar({ brand, transparent, light, action1, action2, sticky, re
 
 
   return (
-    <Container sx={sticky ? { position: "sticky", top: 0, zIndex: 10 } : null}>
       <SoftBox
         py={1}
         px={{ xs: 4, sm: transparent ? 2 : 3, lg: transparent ? 0 : 2 }}
@@ -347,7 +346,7 @@ function DefaultNavbar({ brand, transparent, light, action1, action2, sticky, re
           backdropFilter: transparent ? "none" : `saturate(200%) blur(30px)`,
         })}
       >
-        <SoftBox display="flex" justifyContent="space-between" alignItems="center">
+        <SoftBox display="flex" justifyContent="space-between" alignItems="flex-start">
           <SoftBox
             component={Link}
             to="/"
@@ -355,7 +354,7 @@ function DefaultNavbar({ brand, transparent, light, action1, action2, sticky, re
             py={0.75}
             pl={relative || transparent ? 0 : { xs: 0, lg: 1 }}
           >
-            <SoftBox component="img" src={laborupLogo} alt={"laborup"} width="175px" borderRadius="lg" />
+            <SoftBox component="img" src={laborupLogo} alt={"laborup"} width="175px" borderRadius="lg"/>
           </SoftBox>
           <SoftBox
             color="inherit"
@@ -390,7 +389,6 @@ function DefaultNavbar({ brand, transparent, light, action1, action2, sticky, re
           {mobileView && <DefaultNavbarMobile routes={routes} open={mobileNavbar} />}
         </SoftBox>
       </SoftBox>
-    </Container>
   );
 }
 
