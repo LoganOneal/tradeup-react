@@ -29,6 +29,7 @@ import SoftBox from "components/SoftBox";
 import SoftTypography from "components/SoftTypography";
 import SoftButton from "components/SoftButton";
 import SoftAvatar from "components/SoftAvatar";
+import theme from "assets/theme";
 
 function InfoCard({ image, title, description }) {
 
@@ -51,7 +52,12 @@ function InfoCard({ image, title, description }) {
             rel="noreferrer"
             variant="h4"
             textTransform="capitalize"
-            sx={{ whiteSpace: "nowrap" }}
+            sx={{
+              whiteSpace: "nowrap",
+              [theme.breakpoints.down("sm")]: {
+                whiteSpace: "normal",
+              },
+            }}
             color="info"
           >
             {title}

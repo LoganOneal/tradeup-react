@@ -31,6 +31,7 @@ import SoftTypography from "components/SoftTypography";
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import PageLayout from "examples/LayoutContainers/PageLayout";
 import InfoCard from "../Cards/InfoCard/InfoCard";
+import theme from "assets/theme";
 
 // Authentication layout components
 import Footer from "examples/Footer";
@@ -44,24 +45,24 @@ import employerIcon from "assets/images/illustrations/employers_icon.png"
 function LandingLayout({ color, header, title, description, image, top, children }) {
   return (
     <PageLayout background="white">
-        <DefaultNavbar
-          routes={routes}
-          action1={{
-            type: "external",
-            route: "/talent/info",
-            label: "Skilled Workers",
-            color: "info",
-          }}
-          action2={{
-            type: "external",
-            route: "/employers/info",
-            label: "Employers",
-            color: "info",
-          }}
-          transparent
-          relative
-          center
-        />
+      <DefaultNavbar
+        routes={routes}
+        action1={{
+          type: "external",
+          route: "/talent/info",
+          label: "Skilled Workers",
+          color: "info",
+        }}
+        action2={{
+          type: "external",
+          route: "/employers/info",
+          label: "Employers",
+          color: "info",
+        }}
+        transparent
+        relative
+        center
+      />
 
       <Grid
         container
@@ -72,12 +73,18 @@ function LandingLayout({ color, header, title, description, image, top, children
         }}
       >
         <Grid item xs={11} sm={8} md={5} xl={4}>
-          <SoftBox mt={top}>
-            <SoftBox pt={2} >
+            <SoftBox sx={{ mt: { md: top } }}>
+            <SoftBox>
               {!header ? (
                 <>
                   <SoftBox mb={1}>
-                    <SoftTypography variant="h1" fontWeight="bold" color={color} textGradient sx={{ whiteSpace: "nowrap" }}>
+                    <SoftTypography variant="h1" fontWeight="bold" color={color} textGradient
+                      sx={{
+                        whiteSpace: "nowrap",
+                        [theme.breakpoints.down("sm")]: {
+                          whiteSpace: "normal",
+                        },
+                      }}>
                       A Skilled Industrial Workforce
                     </SoftTypography>
                     <SoftTypography variant="h1" fontWeight="bold" color={color} textGradient sx={{ whiteSpace: "nowrap" }}>
@@ -135,21 +142,21 @@ function LandingLayout({ color, header, title, description, image, top, children
           <Grid xs={10} lg={8}>
             <SoftBox>
               <Grid container spacing={3} justifyContent="center">
-                <Grid item xs={12} md={6} xl={4} justifyContent={"center"}>
+                <Grid item xs={11} md={6} xl={4} justifyContent={"center"}>
                   <InfoCard
                     image={workerIcon}
                     title="Better for Job Seekers"
                     description="Let AI navigate your job search"
                   />
                 </Grid>
-                <Grid item xs={12} md={6} xl={4}>
+                <Grid item xs={11} md={6} xl={4}>
                   <InfoCard
                     image={employerIcon}
                     title="Employers Love It"
                     description="Find, vet, and hire faster with AI"
                   />
                 </Grid>
-                <Grid item xs={12} md={6} xl={4}>
+                <Grid item xs={11} md={6} xl={4}>
                   <InfoCard
                     image={betterTogetherIcon}
                     title="Skilled workers 🤝 Quality Employers"

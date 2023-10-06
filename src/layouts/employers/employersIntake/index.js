@@ -88,7 +88,6 @@ function EmployersIntake() {
             </SoftTypography>
           </SoftBox>
           <SoftBox pt={0} pb={3} px={3}>
-
             <SoftBox component="form" role="form" onSubmit={handleSubmit}>
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
