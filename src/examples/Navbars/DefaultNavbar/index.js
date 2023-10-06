@@ -363,22 +363,6 @@ function DefaultNavbar({ brand, transparent, light, action1, action2, sticky, re
             mr={center ? "auto" : 0}
           >
           </SoftBox>
-          {!mobileView &&
-            <>
-  
-            </>
-          }
-          <SoftBox
-            display={{ xs: "inline-block", lg: "none" }}
-            lineHeight={0}
-            py={1.5}
-            pl={1.5}
-            color={transparent ? "inherit" : "inherit"}
-            sx={{ cursor: "pointer" }}
-            onClick={openMobileNavbar}
-          >
-            <Icon fontSize="default">{mobileNavbar ? "close" : "menu"}</Icon>
-          </SoftBox>
         </SoftBox>
         <SoftBox
           bgColor={transparent ? "white" : "transparent"}
