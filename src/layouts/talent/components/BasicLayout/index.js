@@ -49,7 +49,7 @@ function BasicLayout({ title, description, image, children }) {
         }}
       >
         <Grid container spacing={3} justifyContent="center" sx={{ textAlign: "center" }}>
-          <Grid item xs={10} lg={8}>
+          <Grid item xs={12} lg={8}>
             <SoftBox mt={16} mb={1}>
               <SoftTypography variant="h2" color="white" fontWeight="bold">
                 {title}

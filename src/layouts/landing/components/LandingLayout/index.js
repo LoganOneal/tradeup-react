@@ -73,30 +73,30 @@ function LandingLayout({ color, header, title, description, image, top, children
         }}
       >
         <Grid item xs={11} sm={8} md={5} xl={4}>
-            <SoftBox sx={{ mt: { md: top, xs: 6 } }}>
-              {!header ? (
-                <>
-                  <SoftBox mb={1}>
-                    <SoftTypography variant="h1" fontWeight="bold" color={color} textGradient
-                      sx={{
-                        whiteSpace: "nowrap",
-                        [theme.breakpoints.down("sm")]: {
-                          whiteSpace: "normal",
-                        },
-                      }}>
-                      A Skilled Industrial Workforce
-                    </SoftTypography>
-                    <SoftTypography variant="h1" fontWeight="bold" color={color} textGradient sx={{ whiteSpace: "nowrap" }}>
-                      Within Reach
-                    </SoftTypography>
-                  </SoftBox>
-                  <SoftTypography variant="h3" fontWeight="regular" color="text">
-                    Bridging Talent and Jobs with <strong>AI</strong>
+          <SoftBox sx={{ mt: { md: top, xs: 6 } }}>
+            {!header ? (
+              <>
+                <SoftBox mb={1}>
+                  <SoftTypography variant="h1" fontWeight="bold" color={color} textGradient
+                    sx={{
+                      whiteSpace: "nowrap",
+                      [theme.breakpoints.down("sm")]: {
+                        whiteSpace: "normal",
+                      },
+                    }}>
+                    A Skilled Industrial Workforce
                   </SoftTypography>
-                </>
-              ) : (
-                header
-              )}
+                  <SoftTypography variant="h1" fontWeight="bold" color={color} textGradient sx={{ whiteSpace: "nowrap" }}>
+                    Within Reach
+                  </SoftTypography>
+                </SoftBox>
+                <SoftTypography variant="h3" fontWeight="regular" color="text">
+                  Bridging Talent and Jobs with <strong>AI</strong>
+                </SoftTypography>
+              </>
+            ) : (
+              header
+            )}
             <SoftBox py={3}>{children}</SoftBox>
           </SoftBox>
         </Grid>
@@ -138,7 +138,16 @@ function LandingLayout({ color, header, title, description, image, top, children
 
         <Grid container justifyContent="center" py={8}>
           <Grid xs={10} lg={8}>
-            <SoftBox>
+            <SoftBox py={3} sx={{ textAlign: "center" }}>
+              <SoftTypography variant="h2" fontWeight="bold" color={"info"} textGradient>
+                Find your next high paying job in&nbsp;
+              </SoftTypography>
+              <SoftTypography variant="h2" fontWeight="bold" color={"dark"} textGradient>
+                <ReactRotatingText items={['Manufacturing', 'Logistics', 'Warehousing', 'Construction', 'Automotive']} />
+              </SoftTypography>
+            </SoftBox>
+
+            <SoftBox py={3}>
               <Grid container spacing={3} justifyContent="center">
                 <Grid item xs={11} md={6} xl={4} justifyContent={"center"}>
                   <InfoCard
@@ -163,14 +172,7 @@ function LandingLayout({ color, header, title, description, image, top, children
                 </Grid>
               </Grid>
             </SoftBox>
-            <SoftBox sx={{ textAlign: "center" }} pt={8}>
-              <SoftTypography variant="h2" fontWeight="bold" color={"info"} textGradient>
-                Find your next high paying job in&nbsp;
-              </SoftTypography>
-              <SoftTypography variant="h2" fontWeight="bold" color={"dark"} textGradient>
-                <ReactRotatingText items={['Manufacturing', 'Logistics', 'Warehousing', 'Construction', 'Automotive']} />
-              </SoftTypography>
-            </SoftBox>
+
 
           </Grid>
         </Grid>

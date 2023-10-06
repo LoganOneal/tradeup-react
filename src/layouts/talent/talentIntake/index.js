@@ -79,9 +79,9 @@ function TalentIntake() {
       description="We will use this information to match you with the right employers."
       image={curved6}
     >
-      <Grid item xs={10} sm={10} md={6} lg={10} xl={8}>
-        <Card sx={{ width: "100%" }}>
-        <iframe class="airtable-embed" src="https://airtable.com/embed/appF8iniLjyjrpRcM/shrVOxCtgDaUHulVV?backgroundColor=cyan" frameborder="0" onmousewheel="" width="100%" height="533" style={{background: "transparent", border: "1px solid #ccc"}}></iframe>
+      <Grid item xs={12} sm={12} md={8} lg={10} xl={8}>
+        <Card>
+          <iframe class="airtable-embed" src="https://airtable.com/embed/appF8iniLjyjrpRcM/shrVOxCtgDaUHulVV?backgroundColor=cyan" frameborder="0" onmousewheel="" width="100%" height="533" style={{background: "transparent", border: "1px solid #ccc", height: "100vh"}}></iframe>
         </Card>
       </Grid>
     </BasicLayout>
