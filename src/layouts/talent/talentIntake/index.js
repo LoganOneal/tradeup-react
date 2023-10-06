@@ -81,7 +81,7 @@ function TalentIntake() {
     >
       <Grid item xs={12} sm={12} md={8} lg={10} xl={8}>
         <Card>
-          <iframe class="airtable-embed" src="https://airtable.com/embed/appF8iniLjyjrpRcM/shrVOxCtgDaUHulVV?backgroundColor=cyan" frameborder="0" onmousewheel="" width="100%" height="533" style={{background: "transparent", border: "1px solid #ccc", height: "100vh"}}></iframe>
+          <iframe class="airtable-embed" src="https://airtable.com/embed/appF8iniLjyjrpRcM/shrVOxCtgDaUHulVV?backgroundColor=white" frameborder="0" onmousewheel="" width="100%" height="533" style={{background: "transparent", border: "1px solid #ccc", height: "100vh"}}></iframe>
         </Card>
       </Grid>
     </BasicLayout>
