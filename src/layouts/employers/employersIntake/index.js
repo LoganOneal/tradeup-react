@@ -84,7 +84,7 @@ function EmployersIntake() {
         <Card sx={{ width: "100%" }}>
           <SoftBox p={3} textAlign="center">
             <SoftTypography variant="h5" fontWeight="medium">
-              Create your account for free.
+              Connect with canidates
             </SoftTypography>
           </SoftBox>
           <SoftBox pt={0} pb={3} px={3}>

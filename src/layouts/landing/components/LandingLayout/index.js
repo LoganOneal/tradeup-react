@@ -85,7 +85,7 @@ function LandingLayout({ color, header, title, description, image, top, children
                     </SoftTypography>
                   </SoftBox>
                   <SoftTypography variant="h3" fontWeight="regular" color="text">
-                    {description}
+                    Bridging Talent and Jobs with <strong>AI</strong>
                   </SoftTypography>
                 </>
               ) : (
@@ -139,21 +139,21 @@ function LandingLayout({ color, header, title, description, image, top, children
                   <InfoCard
                     image={workerIcon}
                     title="Better for Job Seekers"
-                    description="Let Us and AI Navigate Your Job Hunt: Get Discovered, Vetted, and Hired"
+                    description="Let AI navigate your job search"
                   />
                 </Grid>
                 <Grid item xs={12} md={6} xl={4}>
                   <InfoCard
                     image={employerIcon}
                     title="Employers Love It"
-                    description="Unlocking Skilled Talent in Weeks, Not Months: Find, Vet, and Hire Faster with AI."
+                    description="Find, vet, and hire faster with AI"
                   />
                 </Grid>
                 <Grid item xs={12} md={6} xl={4}>
                   <InfoCard
                     image={betterTogetherIcon}
                     title="Skilled workers 🤝 Quality Employers"
-                    description="Connect reliable talent with skilled workers 10x faster."
+                    description="Connecting reliable talent with skilled workers 10x faster."
                   />
                 </Grid>
               </Grid>

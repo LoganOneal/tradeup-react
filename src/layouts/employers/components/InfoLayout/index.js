@@ -76,7 +76,7 @@ function InfoLayout({ title, description, buttonLink, image, children }) {
                     <Grid item xs={10} lg={6} xl={8}>
                         <SoftBox mt={6} mb={3}>
                             <SoftTypography variant="h1" color="white" fontWeight="bold">
-                                {title}
+                                <mark style={{ backgroundColor: "#208BFE" }}>{title}</mark>
                             </SoftTypography>
                             <SoftTypography variant="h4" color="white" fontWeight="regular">
                                 {description}

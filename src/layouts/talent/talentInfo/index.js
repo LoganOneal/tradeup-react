@@ -76,24 +76,13 @@ function TalentInfo() {
     >
       <Grid container justifyContent="center" pt={22}>
         <Grid xs={10} lg={10}>
-          <SoftBox sx={{ textAlign: "center" }} pt={3}>
+          <SoftBox sx={{ textAlign: "center" }} py={4}>
             <SoftTypography variant="h2" fontWeight="bold" color={"info"} textGradient>
               Find your next high paying job in&nbsp;
             </SoftTypography>
             <SoftTypography variant="h2" fontWeight="bold" color={"dark"} textGradient>
               <ReactRotatingText items={['Manufacturing', 'Logistics', 'Warehousing', 'Construction', 'Automotive']} />
             </SoftTypography>
-            <SoftBox my={3}>
-              <SoftTypography variant="body2" color="text">
-                We understand the significance of individuals have rightfully earned the title of tradesperson, as they are the foundation of our nation.
-                LaborUp strives to bridge the gap in skilled labor by uniting qualified tradespeople with employers who highly value their expertise.
-              </SoftTypography>
-            </SoftBox>
-            <SoftBox mt={6}>
-              <SoftTypography variant="h2" fontWeight="bold" color={"dark"} textGradient>
-                At companies like..
-              </SoftTypography>
-            </SoftBox>
           </SoftBox>
           <SoftBox py={3} sx={{ display: "flex", justifyContent: "center", position: "absolute", left: 0, right: 0 }}>
             <Splide
