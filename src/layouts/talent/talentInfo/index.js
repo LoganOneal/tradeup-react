@@ -27,6 +27,8 @@ import Grid from "@mui/material/Grid";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/splide/dist/css/splide.min.css";
+import '@splidejs/react-splide/css';
+import '@splidejs/react-splide/css/core';
 
 // React Rotating Text
 import ReactRotatingText from 'react-rotating-text';
@@ -48,10 +50,22 @@ import curved6 from "assets/images/talent.jpg";
 import employerIcon from "assets/images/illustrations/employers_icon.png"
 import densoLogo from "assets/images/logos/denso_logo_grey.png"
 
+import boeingLogo from "assets/images/logos/companies/boeing_logo.png"
+import fordLogo from "assets/images/logos/companies/ford_logo.png"
+import gmLogo from "assets/images/logos/companies/gm_logo.png"
+import hondaLogo from "assets/images/logos/companies/honda_logo.png"
+import nissanLogo from "assets/images/logos/companies/nissan_logo.png"
+import testlaLogo from "assets/images/logos/companies/tesla_logo.png"
+import toyotaLogo from "assets/images/logos/companies/toyota_logo.png"
+import { VerticalAlignBottom } from "@mui/icons-material";
+
+
 function TalentInfo() {
   const [agreement, setAgremment] = useState(true);
 
   const handleSetAgremment = () => setAgremment(!agreement);
+
+  const companyLogos = [boeingLogo, fordLogo, gmLogo, hondaLogo, nissanLogo, testlaLogo, toyotaLogo];
 
   return (
     <InfoLayout
@@ -81,27 +95,7 @@ function TalentInfo() {
               </SoftTypography>
             </SoftBox>
           </SoftBox>
-          <Grid container spacing={3} justifyContent="center">
-            <Grid item xs={4} md={4} lg={4} xl={2}>
-              <SoftBox component="img" src={densoLogo} width="100%" borderRadius="lg" />
-            </Grid>
-            <Grid item xs={4} md={4} lg={4} xl={2}>
-              <SoftBox component="img" src={densoLogo} width="100%" borderRadius="lg" />
-            </Grid>
-            <Grid item xs={4} md={4} lg={4} xl={2}>
-              <SoftBox component="img" src={densoLogo} width="100%" borderRadius="lg" />
-            </Grid>
-            <Grid item xs={4} md={4} lg={4} xl={2}>
-              <SoftBox component="img" src={densoLogo} width="100%" borderRadius="lg" />
-            </Grid>
-            <Grid item xs={4} md={4} lg={4} xl={2}>
-              <SoftBox component="img" src={densoLogo} width="100%" borderRadius="lg" />
-            </Grid>
-            <Grid item xs={4} md={4} lg={4} xl={2}>
-              <SoftBox component="img" src={densoLogo} width="100%" borderRadius="lg" />
-            </Grid>
-          </Grid>
-          <SoftBox py={3} bgColor="secondary" sx={{ display: "flex", justifyContent: "center", position: "absolute", left: 0, right: 0 }}>
+          <SoftBox py={3} sx={{ display: "flex", justifyContent: "center", position: "absolute", left: 0, right: 0 }}>
             <Splide
               options={{
                 type: "loop",
@@ -109,52 +103,21 @@ function TalentInfo() {
                 gap: "10px",
                 arrows: false,
                 pagination: false,
-                perPage: 4,
+                perPage: 8,
                 autoScroll: {
                   pauseOnHover: false,
                   pauseOnFocus: false,
                   rewind: false,
-                  speed: 1
+                  speed: 0.75,
                 }
               }}
               extensions={{ AutoScroll }}
             >
-              <SplideSlide>
-                <img src="https://via.placeholder.com/150" alt="Image 1" />
-              </SplideSlide>
-              <SplideSlide>
-                <img src="https://via.placeholder.com/150" alt="Image 2" />
-              </SplideSlide>
-              <SplideSlide>
-                <img src="https://via.placeholder.com/150" alt="Image 3" />
-              </SplideSlide>
-              <SplideSlide>
-                <img src="https://via.placeholder.com/150" alt="Image 4" />
-              </SplideSlide>
-              <SplideSlide>
-                <img src="https://via.placeholder.com/150" alt="Image 5" />
-              </SplideSlide>
-              <SplideSlide>
-                <img src="https://via.placeholder.com/150" alt="Image 6" />
-              </SplideSlide>
-              <SplideSlide>
-                <img src="https://via.placeholder.com/150" alt="Image 7" />
-              </SplideSlide>
-              <SplideSlide>
-                <img src="https://via.placeholder.com/150" alt="Image 8" />
-              </SplideSlide>
-              <SplideSlide>
-                <img src="https://via.placeholder.com/150" alt="Image 8" />
-              </SplideSlide>
-              <SplideSlide>
-                <img src="https://via.placeholder.com/150" alt="Image 10" />
-              </SplideSlide>
-              <SplideSlide>
-                <img src="https://via.placeholder.com/150" alt="Image 11" />
-              </SplideSlide>
-              <SplideSlide>
-                <img src="https://via.placeholder.com/150" alt="Image 12" />
-              </SplideSlide>
+              {companyLogos.map((logo, index) => (
+                <SplideSlide key={index}>
+                  <SoftBox component="img" px={".2rem"} src={logo} height="3rem" maxWidth="100%"/>
+                </SplideSlide>
+              ))}
             </Splide>
           </SoftBox>
         </Grid>
