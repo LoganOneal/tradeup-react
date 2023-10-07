@@ -74,9 +74,9 @@ function TalentInfo() {
       image={curved6}
       buttonLink="/talent/intake"
     >
-      <Grid container justifyContent="center" pt={10}>
+      <Grid container justifyContent="center">
         <Grid xs={10} lg={10}>
-          <SoftBox  py={1} sx={{ display: "flex", justifyContent: "center", position: "absolute", left: 0, right: 0, backgroundColor: "#FFFFFF" }}>
+          <SoftBox  py={1} sx={{ display: "flex", justifyContent: "center", position: "relative", left: 0, right: 0, backgroundColor: "#FFFFFF" }}>
             <Splide
               options={{
                 background: "transparent",

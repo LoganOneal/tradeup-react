@@ -57,8 +57,8 @@ function InfoLayout({ title, description, buttonLink, image, children }) {
             />
             <Grid container spacing={3} justifyContent="center" sx={{ textAlign: "center" }}>
                 <Grid item xs={10} lg={6} xl={8}>
-                    <SoftBox mt={6} mb={3}>
-                        <SoftBox sx={{ textAlign: "center" }} py={4}>
+                    <SoftBox mt={4} mb={3}>
+                        <SoftBox sx={{ textAlign: "center" }}>
                             <SoftTypography variant="h2" fontWeight="bold" color={"info"} textGradient>
                                 Find your next high paying job in&nbsp;
                             </SoftTypography>
@@ -66,7 +66,12 @@ function InfoLayout({ title, description, buttonLink, image, children }) {
                                 <ReactRotatingText items={['Manufacturing', 'Logistics', 'Warehousing', 'Construction', 'Automotive']} />
                             </SoftTypography>
                         </SoftBox>
-                        <SoftTypography variant="h4" color="grey" fontWeight="regular" mt={3}>
+                        <SoftBox px={1} py={8} width="calc(100% - 2rem)" mx="auto">
+                                <Grid item xs={11} sm={4} md={6} lg={8} xl={10}>
+                                    {children}
+                                </Grid>
+                        </SoftBox>
+                        <SoftTypography variant="h4" color="grey" fontWeight="regular" mt={5}>
                             {description}
                         </SoftTypography>
                     </SoftBox>
@@ -82,13 +87,6 @@ function InfoLayout({ title, description, buttonLink, image, children }) {
                     </SoftBox>
                 </Grid>
             </Grid>
-            <SoftBox px={1} width="calc(100% - 2rem)" mx="auto">
-                <Grid container spacing={1} justifyContent="center">
-                    <Grid item xs={11} sm={4} md={6} lg={8} xl={10}>
-                        {children}
-                    </Grid>
-                </Grid>
-            </SoftBox>
         </PageLayout>
     );
 }
