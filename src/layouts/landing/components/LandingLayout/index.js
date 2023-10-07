@@ -99,7 +99,7 @@ function LandingLayout({ color, header, title, description, image, top, children
                   </SoftTypography>
                 </SoftBox>
                 <SoftTypography variant="h3" py={2} fontWeight="regular" color="text" >
-                  Bridging Talent and Jobs with <strong>AI</strong>
+                  <strong>AI</strong> to help real people find real jobs
                 </SoftTypography>
               </>
             ) : (
