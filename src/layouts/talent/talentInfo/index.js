@@ -105,7 +105,7 @@ function TalentInfo() {
             >
               {companyLogos.map((logo, index) => (
                 <SplideSlide key={index}>
-                  <SoftBox component="img" px={".2rem"} src={logo} height="3rem" maxWidth="100%"/>
+                  <SoftBox component="img" px={".2rem"} src={logo} maxHeight="3rem" maxWidth="100%"/>
                 </SplideSlide>
               ))}
             </Splide>
