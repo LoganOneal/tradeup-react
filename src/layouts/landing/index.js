@@ -55,7 +55,7 @@ function Landing() {
       description="Bridging Talent and Jobs with AI"
       image={curved9}
     >
-      <Grid container spacing={1} justifyContent="left">
+      <Grid container spacing={1} justifyContent="left" py={2}>
         <Grid item xs={11} s={11} md={6} >
           <SoftButton
             component={Link}
