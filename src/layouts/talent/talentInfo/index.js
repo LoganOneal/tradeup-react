@@ -41,7 +41,7 @@ import SoftButton from "components/SoftButton";
 import InfoCard from "examples/Cards/InfoCard/InfoCard";
 
 // Authentication layout components
-import InfoLayout from "layouts/employers/components/InfoLayout";
+import InfoLayout from "layouts/talent/components/InfoLayout";
 import Socials from "layouts/authentication/components/Socials";
 import Separator from "layouts/authentication/components/Separator";
 

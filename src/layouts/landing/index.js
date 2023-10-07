@@ -23,6 +23,7 @@ import Switch from "@mui/material/Switch";
 import Icon from "@mui/material/Icon";
 import IconButton from "@mui/material/IconButton";
 import Card from "@mui/material/Card";
+import Grid from "@mui/material/Grid";
 
 // Soft UI Dashboard React components
 import SoftBox from "components/SoftBox";
@@ -45,6 +46,8 @@ import LandingLayout from "layouts/landing/components/LandingLayout";
 // Imagess
 import curved9 from "assets/images/landing_workers.jpg";
 
+import Stack from "@mui/material/Stack";
+
 function Landing() {
   return (
     <LandingLayout
@@ -52,26 +55,32 @@ function Landing() {
       description="Bridging Talent and Jobs with AI"
       image={curved9}
     >
-        <SoftBox display="flex" mb={2}>
-            <SoftButton 
-              component={Link}
-              to={"/talent/info"}
-              variant="gradient" 
-              color="info"
-              size="large">
-              Looking for Work?
-            </SoftButton>
-            <SoftBox px={1}>
-              <SoftButton
-                component={Link}
-                to={"/employers/info"}
-                variant="outlined"
-                color="info"
-                size="large">
-                I Want to Hire
-              </SoftButton>
-          </SoftBox> 
-        </SoftBox>
+      <Grid container spacing={1} justifyContent="left">
+        <Grid item s={12} md={6} >
+          <SoftButton
+            component={Link}
+            to={"/talent/info"}
+            variant="gradient"
+            color="info"
+            size="large"
+            sx={{ width: "100%", height: "100%" }}
+          >
+            Looking for Work?
+          </SoftButton>
+        </Grid>
+        <Grid item s={12} md={6} >
+          <SoftButton
+            component={Link}
+            to={"/employers/info"}
+            variant="outlined"
+            color="info"
+            size="large"
+            sx={{ width: "100%", height: "100%" }}
+          >
+            I Want to Hire
+          </SoftButton>
+        </Grid>
+      </Grid>
     </LandingLayout>
   );
 }
