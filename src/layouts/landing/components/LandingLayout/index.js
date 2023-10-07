@@ -79,6 +79,9 @@ function LandingLayout({ color, header, title, description, image, top, children
                 <SoftBox mb={1}>
                   <SoftTypography variant="h1" fontWeight="bold" color={color} textGradient
                     sx={{
+                      "@media (max-width: 960px)": {
+                        fontSize: "1.5rem",
+                      },
                       whiteSpace: "nowrap",
                       [theme.breakpoints.down("sm")]: {
                         whiteSpace: "normal",
@@ -86,11 +89,20 @@ function LandingLayout({ color, header, title, description, image, top, children
                     }}>
                     A Skilled Industrial Workforce
                   </SoftTypography>
-                  <SoftTypography variant="h1" fontWeight="bold" color={color} textGradient sx={{ whiteSpace: "nowrap" }}>
+                  <SoftTypography variant="h1" fontWeight="bold" color={color} textGradient
+                    sx={{
+                      "@media (max-width: 960px)": {
+                        fontSize: "1.5rem",
+                      }, whiteSpace: "nowrap"
+                    }}>
                     Within Reach
                   </SoftTypography>
                 </SoftBox>
-                <SoftTypography variant="h3" fontWeight="regular" color="text">
+                <SoftTypography variant="h3" fontWeight="regular" color="text" sx={{
+                  "@media (max-width: 960px)": {
+                    fontSize: "1.1rem",
+                  }, whiteSpace: "nowrap"
+                }}>
                   Bridging Talent and Jobs with <strong>AI</strong>
                 </SoftTypography>
               </>

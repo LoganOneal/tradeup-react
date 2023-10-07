@@ -56,7 +56,7 @@ function Landing() {
       image={curved9}
     >
       <Grid container spacing={1} justifyContent="left">
-        <Grid item s={12} md={6} >
+        <Grid item xs={11} s={11} md={6} >
           <SoftButton
             component={Link}
             to={"/talent/info"}
@@ -64,21 +64,25 @@ function Landing() {
             color="info"
             size="large"
             sx={{ width: "100%", height: "100%" }}
+            fullWidth
           >
             Looking for Work?
           </SoftButton>
         </Grid>
-        <Grid item s={12} md={6} >
-          <SoftButton
-            component={Link}
-            to={"/employers/info"}
-            variant="outlined"
-            color="info"
-            size="large"
-            sx={{ width: "100%", height: "100%" }}
-          >
-            I Want to Hire
-          </SoftButton>
+        <Grid item xs={11} s={11} md={6} fullWidth>
+          <SoftBox>
+            <SoftButton
+              component={Link}
+              to={"/employers/info"}
+              variant="outlined"
+              color="info"
+              size="large"
+              sx={{ width: "100%", height: "100%" }}
+              fullWidth
+            >
+              I Want to Hire
+            </SoftButton>
+          </SoftBox>
         </Grid>
       </Grid>
     </LandingLayout>

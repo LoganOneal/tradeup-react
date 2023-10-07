@@ -34,13 +34,6 @@ import PageLayout from "examples/LayoutContainers/PageLayout";
 import Footer from "layouts/authentication/components/Footer";
 
 function InfoLayout({ title, description, buttonLink, image, children }) {
-    const isMobile = useMediaQuery("(max-width: 600px)");
-
-    const handleButtonClick = () => {
-        if (isMobile) {
-            window.location.href = "https://airtable.com/embed/appF8iniLjyjrpRcM/shrk4ZcHL6xHy3x4A?backgroundColor=white";
-        }
-    };
 
     return (
         <PageLayout>
@@ -93,11 +86,10 @@ function InfoLayout({ title, description, buttonLink, image, children }) {
                         <SoftBox mb={2} py={3}>
                             <SoftButton
                                 component={Link}
-                                to={buttonLink}
+                                to={"https://airtable.com/appF8iniLjyjrpRcM/shrVOxCtgDaUHulVV"}
                                 variant="gradient"
                                 color="info"
-                                size="large"
-                                onClick={handleButtonClick}>
+                                size="large">
                                 Join our Waitlist!
                             </SoftButton>
                         </SoftBox>

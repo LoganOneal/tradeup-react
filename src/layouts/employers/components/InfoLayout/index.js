@@ -37,9 +37,7 @@ function InfoLayout({ title, description, buttonLink, image, children }) {
     const isMobile = useMediaQuery("(max-width: 600px)");
 
     const handleButtonClick = () => {
-        if (isMobile) {
-            window.location.href = "https://airtable.com/embed/appF8iniLjyjrpRcM/shrk4ZcHL6xHy3x4A?backgroundColor=white";
-        }
+        window.location.href = "https://airtable.com/embed/appF8iniLjyjrpRcM/shrk4ZcHL6xHy3x4A?backgroundColor=white";
     };
 
     return (
@@ -93,11 +91,10 @@ function InfoLayout({ title, description, buttonLink, image, children }) {
                         <SoftBox mb={2} py={3}>
                             <SoftButton
                                 component={Link}
-                                to={buttonLink}
+                                to={"https://airtable.com/embed/appF8iniLjyjrpRcM/shrk4ZcHL6xHy3x4A?backgroundColor=white"}
                                 variant="gradient"
                                 color="info"
-                                size="large"
-                                onClick={handleButtonClick}>
+                                size="large">
                                 Join our Waitlist!
                             </SoftButton>
                         </SoftBox>
