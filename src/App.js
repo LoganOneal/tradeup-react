@@ -163,7 +163,7 @@ export default function App() {
       {layout === "dashboard" && (
         <>
           <Sidenav
-            color={sidenavColor}
+            color={"white"}
             brand={brand}
             brandName="LaborUp"
             routes={routes}
