@@ -84,9 +84,10 @@ function TalentInfo() {
               <ReactRotatingText items={['Manufacturing', 'Logistics', 'Warehousing', 'Construction', 'Automotive']} />
             </SoftTypography>
           </SoftBox>
-          <SoftBox py={3} sx={{ display: "flex", justifyContent: "center", position: "absolute", left: 0, right: 0 }}>
+          <SoftBox  py={3} sx={{ display: "flex", justifyContent: "center", position: "absolute", left: 0, right: 0, backgroundColor: "#FFFFFF" }}>
             <Splide
               options={{
+                background: "transparent",
                 type: "loop",
                 drag: "free",
                 gap: "10px",
