@@ -77,7 +77,7 @@ function LandingLayout({ color, header, title, description, image, top, children
             {!header ? (
               <>
                 <SoftBox mb={1}>
-                  <SoftTypography variant="h1" fontWeight="bold" color={color} textGradient
+                  <SoftTypography variant="h2" fontWeight="bold" color={color} textGradient
                     sx={{
                       whiteSpace: "nowrap",
                       [theme.breakpoints.down("sm")]: {
@@ -86,7 +86,7 @@ function LandingLayout({ color, header, title, description, image, top, children
                     }}>
                     A Skilled Industrial Workforce
                   </SoftTypography>
-                  <SoftTypography variant="h1" fontWeight="bold" color={color} textGradient
+                  <SoftTypography variant="h2" fontWeight="bold" color={color} textGradient
                     sx={{ whiteSpace: "nowrap"
                     }}>
                     Within Reach
