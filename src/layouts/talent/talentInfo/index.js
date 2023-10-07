@@ -69,22 +69,14 @@ function TalentInfo() {
 
   return (
     <InfoLayout
-      title="Finding a job just got a lot easier. "
+      title=""
       description="Use AI to get a resume, job matches, career advice"
       image={curved6}
       buttonLink="/talent/intake"
     >
-      <Grid container justifyContent="center" pt={22}>
+      <Grid container justifyContent="center" pt={10}>
         <Grid xs={10} lg={10}>
-          <SoftBox sx={{ textAlign: "center" }} py={4}>
-            <SoftTypography variant="h2" fontWeight="bold" color={"info"} textGradient>
-              Find your next high paying job in&nbsp;
-            </SoftTypography>
-            <SoftTypography variant="h2" fontWeight="bold" color={"dark"} textGradient>
-              <ReactRotatingText items={['Manufacturing', 'Logistics', 'Warehousing', 'Construction', 'Automotive']} />
-            </SoftTypography>
-          </SoftBox>
-          <SoftBox  py={3} sx={{ display: "flex", justifyContent: "center", position: "absolute", left: 0, right: 0, backgroundColor: "#FFFFFF" }}>
+          <SoftBox  py={1} sx={{ display: "flex", justifyContent: "center", position: "absolute", left: 0, right: 0, backgroundColor: "#FFFFFF" }}>
             <Splide
               options={{
                 background: "transparent",

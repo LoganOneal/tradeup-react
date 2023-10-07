@@ -29,6 +29,7 @@ import SoftButton from "components/SoftButton";
 // Soft UI Dashboard React examples
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import PageLayout from "examples/LayoutContainers/PageLayout";
+import ReactRotatingText from 'react-rotating-text';
 
 // Authentication layout components
 import Footer from "layouts/authentication/components/Footer";
@@ -54,49 +55,34 @@ function InfoLayout({ title, description, buttonLink, image, children }) {
                 relative
                 center
             />
-            <SoftBox
-                width="calc(100% - 2rem)"
-                minHeight="50vh"
-                borderRadius="lg"
-                mx={2}
-                my={2}
-                pt={6}
-                pb={28}
-                sx={{
-                    backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
-                        image &&
-                        `${linearGradient(
-                            rgba(gradients.dark.main, 0.6),
-                            rgba(gradients.dark.state, 0.6)
-                        )}, url(${image})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat",
-                }}
-            >
-                <Grid container spacing={3} justifyContent="center" sx={{ textAlign: "center" }}>
-                    <Grid item xs={10} lg={6} xl={8}>
-                        <SoftBox mt={6} mb={3}>
-                            <SoftTypography variant="h1" color="white" fontWeight="bold">
-                                {title}                            </SoftTypography>
-                            <SoftTypography variant="h4" color="white" fontWeight="regular" mt={3}>
-                                {description}
+            <Grid container spacing={3} justifyContent="center" sx={{ textAlign: "center" }}>
+                <Grid item xs={10} lg={6} xl={8}>
+                    <SoftBox mt={6} mb={3}>
+                        <SoftBox sx={{ textAlign: "center" }} py={4}>
+                            <SoftTypography variant="h2" fontWeight="bold" color={"info"} textGradient>
+                                Find your next high paying job in&nbsp;
+                            </SoftTypography>
+                            <SoftTypography variant="h2" fontWeight="bold" color={"dark"} textGradient>
+                                <ReactRotatingText items={['Manufacturing', 'Logistics', 'Warehousing', 'Construction', 'Automotive']} />
                             </SoftTypography>
                         </SoftBox>
-                        <SoftBox mb={2} py={3}>
-                            <SoftButton
-                                component={Link}
-                                to={"https://airtable.com/appF8iniLjyjrpRcM/shrVOxCtgDaUHulVV"}
-                                variant="gradient"
-                                color="info"
-                                size="large">
-                                Join our Waitlist!
-                            </SoftButton>
-                        </SoftBox>
-                    </Grid>
+                        <SoftTypography variant="h4" color="grey" fontWeight="regular" mt={3}>
+                            {description}
+                        </SoftTypography>
+                    </SoftBox>
+                    <SoftBox mb={2} py={3}>
+                        <SoftButton
+                            component={Link}
+                            to={"https://airtable.com/appF8iniLjyjrpRcM/shrVOxCtgDaUHulVV"}
+                            variant="gradient"
+                            color="info"
+                            size="large">
+                            Join our Waitlist!
+                        </SoftButton>
+                    </SoftBox>
                 </Grid>
-            </SoftBox>
-            <SoftBox mt={{ xs: -26, lg: -24 }} px={1} width="calc(100% - 2rem)" mx="auto">
+            </Grid>
+            <SoftBox px={1} width="calc(100% - 2rem)" mx="auto">
                 <Grid container spacing={1} justifyContent="center">
                     <Grid item xs={11} sm={4} md={6} lg={8} xl={10}>
                         {children}
