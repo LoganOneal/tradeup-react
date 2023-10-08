@@ -40,7 +40,7 @@ function PageLayout({ background, children }) {
       width="100vw"
       height="100%"
       minHeight="100vh"
-      bgColor={"white"}
+      bgColor={background}
       sx={{ overflowX: "hidden" }}
     >
       {children}
@@ -55,7 +55,7 @@ PageLayout.defaultProps = {
 
 // Typechecking props for the PageLayout
 PageLayout.propTypes = {
-  background: PropTypes.oneOf(["white"]),
+  background: PropTypes.oneOf(["white", "light", "default"]),
   children: PropTypes.node.isRequired,
 };
 

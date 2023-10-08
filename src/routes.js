@@ -59,6 +59,7 @@ import CreditCard from "examples/Icons/CreditCard";
 import Cube from "examples/Icons/Cube";
 import EmployersInfo from "layouts/employers/employersInfo";
 import EmployersIntake from "layouts/employers/employersIntake";
+import AboutUs from "layouts/aboutUs";
 
 const routes = [
   {
@@ -104,6 +105,15 @@ const routes = [
     route: "/employers/intake",
     icon: <Shop size="12px" />,
     component: <EmployersIntake />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "About Us",
+    key: "aboutUs",
+    route: "/aboutus",
+    icon: <Shop size="12px" />,
+    component: <AboutUs />,
     noCollapse: true,
   }
 ];
