@@ -58,7 +58,7 @@ function DefaultNavbar({ brand, transparent, light, action1, action2, sticky, re
 
   const openMobileNavbar = () => setMobileNavbar(!mobileNavbar);
 
-  const routes = [
+  const mobileRoutes = [
     {
       type: "collapse",
       name: "Skilled Workers",
@@ -71,6 +71,13 @@ function DefaultNavbar({ brand, transparent, light, action1, action2, sticky, re
       name: "Employers",
       key: "employersInfo",
       route: "/employers/info",
+      noCollapse: true,
+    },
+    {
+      type: "collapse",
+      name: "Abous Us",
+      key: "abouUs",
+      route: "/aboutus",
       noCollapse: true,
     },
   ];
@@ -101,7 +108,7 @@ function DefaultNavbar({ brand, transparent, light, action1, action2, sticky, re
   }, []);
 
   // Render the routes on the dropdown menu
-  const renderRoutes = routes.map(({ name, collapse, columns, rowsPerColumn }) => {
+  const renderRoutes = mobileRoutes.map(({ name, collapse, columns, rowsPerColumn }) => {
     let template;
 
     // Render the dropdown menu that should be display as columns
@@ -236,7 +243,7 @@ function DefaultNavbar({ brand, transparent, light, action1, action2, sticky, re
             onMouseEnter={({ currentTarget }) => {
               if (item.dropdown) {
                 setNestedDropdown(currentTarget);
-                setNestedDropdownEl(currentTarget);          
+                setNestedDropdownEl(currentTarget);
                 setNestedDropdownName(item.name);
               }
             }}
@@ -329,49 +336,104 @@ function DefaultNavbar({ brand, transparent, light, action1, action2, sticky, re
 
 
   return (
-      <SoftBox
-        py={1}
-        my={relative ? 0 : 2}
-        mx={relative ? 0 : 3}
-        width={relative ? "100%" : "calc(100% - 48px)"}
-        borderRadius="xl"
-        shadow={transparent ? "none" : "md"}
-        color={light ? "white" : "dark"}
-        position={relative ? "relative" : "absolute"}
-        left={0}
-        zIndex={3}
-        sx={({ palette: { transparent: transparentColor, white }, functions: { rgba } }) => ({
-          backgroundColor: transparent ? transparentColor.main : rgba(white.main, 0.8),
-          backdropFilter: transparent ? "none" : `saturate(200%) blur(30px)`,
-        })}
-      >
-        <SoftBox display="flex" justifyContent="space-between" alignItems="flex-start">
-          <SoftBox
-            component={Link}
-            to="/"
-            lineHeight={.5}
-            py={0.75}
-            pl={relative || transparent ? 0 : { xs: 0, lg: 1 }}
-          >
-            <SoftBox component="img" src={laborupLogo} alt={"laborup"} width="175px" borderRadius="lg"/>
-          </SoftBox>
-          <SoftBox
-            color="inherit"
-            display={{ xs: "none", lg: "flex" }}
-            ml="auto"
-            mr={center ? "auto" : 0}
-          >
-          </SoftBox>
+    <SoftBox
+      py={1}
+      my={relative ? 0 : 2}
+      mx={relative ? 0 : 3}
+      width={relative ? "100%" : "calc(100% - 48px)"}
+      borderRadius="xl"
+      shadow={transparent ? "none" : "md"}
+      color={light ? "white" : "dark"}
+      position={relative ? "relative" : "absolute"}
+      left={0}
+      zIndex={3}
+      sx={({ palette: { transparent: transparentColor, white }, functions: { rgba } }) => ({
+        backgroundColor: transparent ? transparentColor.main : rgba(white.main, 0.8),
+        backdropFilter: transparent ? "none" : `saturate(200%) blur(30px)`,
+      })}
+    >
+      <SoftBox display="flex" justifyContent="space-between" alignItems="flex-start">
+        <SoftBox
+          component={Link}
+          to="/"
+          lineHeight={.5}
+          py={0.75}
+          pl={relative || transparent ? 0 : { xs: 0, lg: 1 }}
+        >
+          <SoftBox component="img" src={laborupLogo} alt={"laborup"} width="175px" borderRadius="lg" />
         </SoftBox>
         <SoftBox
-          bgColor={transparent ? "white" : "transparent"}
-          shadow={transparent ? "lg" : "none"}
-          borderRadius="xl"
-          px={transparent ? 2 : 0}
+          color="inherit"
+          display={{ xs: "none", lg: "flex" }}
+          ml="auto"
+          mr={center ? "auto" : 0}
         >
-          {mobileView && <DefaultNavbarMobile routes={routes} open={mobileNavbar} />}
+
+        </SoftBox>
+        {!mobileView &&
+          <>
+            <SoftBox py={2}
+              pr={2}>
+              <SoftButton
+                component={Link}
+                to={action1.route}
+                variant={
+                  action1.color === "white" || action1.color === "default"
+                    ? "contained"
+                    : "gradient"
+                }
+                color={action1.color ? action1.color : "info"}
+                size="small"
+              >
+                {action1.label}
+              </SoftButton>
+            </SoftBox>
+            <SoftBox py={2} pr={2}>
+              <SoftButton
+                component={Link}
+                to={action2.route}
+                variant="outlined"
+                color={action2.color ? action2.color : "info"}
+                size="small"
+              >
+                {action2.label}
+              </SoftButton>
+            </SoftBox>
+            <SoftBox py={2} pr={3}>
+              <SoftButton
+                component={Link}
+                to={"/aboutus"}
+                variant="regular"
+                color={"dark"}
+                size="small"
+                
+              >
+                About Us
+              </SoftButton>
+            </SoftBox>
+          </>
+        }
+        <SoftBox
+          display={{ xs: "inline-block", lg: "none" }}
+          lineHeight={0}
+          py={3}
+          pr={3}
+          color={transparent ? "inherit" : "inherit"}
+          sx={{ cursor: "pointer" }}
+          onClick={openMobileNavbar}
+        >
+          <Icon fontSize="default">{mobileNavbar ? "close" : "menu"}</Icon>
         </SoftBox>
       </SoftBox>
+      <SoftBox
+        bgColor={transparent ? "white" : "transparent"}
+        shadow={transparent ? "lg" : "none"}
+        borderRadius="xl"
+        px={transparent ? 2 : 0}
+      >
+        {mobileView && <DefaultNavbarMobile routes={mobileRoutes} open={mobileNavbar} />}
+      </SoftBox>
+    </SoftBox>
   );
 }
 
