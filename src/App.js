@@ -48,6 +48,9 @@ import { useSoftUIController, setMiniSidenav, setOpenConfigurator } from "contex
 // Images
 import brand from "assets/images/logo-ct.png";
 
+// Vercely Analytics
+import { Analytics } from '@vercel/analytics/react';
+
 export default function App() {
   const [controller, dispatch] = useSoftUIController();
   const { miniSidenav, direction, layout, openConfigurator, sidenavColor } = controller;
@@ -135,6 +138,7 @@ export default function App() {
   return direction === "rtl" ? (
     <CacheProvider value={rtlCache}>
       <ThemeProvider theme={themeRTL}>
+        <Analytics />
         <CssBaseline />
         {layout === "dashboard" && (
           <>
@@ -159,6 +163,7 @@ export default function App() {
     </CacheProvider>
   ) : (
     <ThemeProvider theme={theme}>
+      <Analytics />
       <CssBaseline />
       {layout === "dashboard" && (
         <>
