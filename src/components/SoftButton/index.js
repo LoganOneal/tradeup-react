@@ -47,7 +47,7 @@ SoftButton.defaultProps = {
 
 // Typechecking props for the SoftButton
 SoftButton.propTypes = {
-  size: PropTypes.oneOf(["small", "medium", "large"]),
+  size: PropTypes.oneOf(["small", "medium", "large", "xl"]),
   variant: PropTypes.oneOf(["text", "contained", "outlined", "gradient"]),
   color: PropTypes.oneOf([
     "white",

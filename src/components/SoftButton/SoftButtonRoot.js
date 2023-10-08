@@ -191,8 +191,10 @@ export default styled(Button)(({ theme, ownerState }) => {
       sizeValue = pxToRem(25.4);
     } else if (size === "large") {
       sizeValue = pxToRem(52);
+    } else if (size === "xl") {
+      sizeValue = pxToRem(105);
     }
-
+ 
     // padding value
     let paddingValue = `${pxToRem(11)} ${pxToRem(11)} ${pxToRem(10)}`;
 
@@ -200,7 +202,10 @@ export default styled(Button)(({ theme, ownerState }) => {
       paddingValue = pxToRem(4.5);
     } else if (size === "large") {
       paddingValue = pxToRem(16);
+    } else if (size === "xl") {
+      paddingValue = pxToRem(20);
     }
+    
 
     return {
       width: sizeValue,
