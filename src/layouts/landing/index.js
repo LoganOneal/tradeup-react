@@ -56,20 +56,20 @@ function Landing() {
       image={curved9}
     >
       <Grid container spacing={1} justifyContent="left" py={2}>
-        <Grid item xs={11} s={11} md={6} >
+        <Grid item xs={11} sm={11} md={11} lg={6} fullWidth>
           <SoftButton
             component={Link}
             to={"/talent/info"}
             variant="gradient"
             color="info"
             size="large"
-            sx={{ width: "100%", height: "100%" }}
+            sx={{ width: "100%", minHeight: "64px" }}
             fullWidth
           >
             Looking for Work?
           </SoftButton>
         </Grid>
-        <Grid item xs={11} s={11} md={6} fullWidth>
+        <Grid item xs={11} sm={11} md={11} lg={6} fullWidth>
           <SoftBox>
             <SoftButton
               component={Link}
@@ -77,7 +77,7 @@ function Landing() {
               variant="outlined"
               color="info"
               size="large"
-              sx={{ width: "100%", height: "100%" }}
+              sx={{ width: "100%", minHeight: "64px" }}
               fullWidth
             >
               I Want to Hire

@@ -42,7 +42,7 @@ import Separator from "layouts/authentication/components/Separator";
 import curved6 from "assets/images/talent.jpg";
 import reduceCostIcon from "assets/images/illustrations/reduce_cost.png"
 import welderIcon from "assets/images/illustrations/welder.png"
-import skilledTalentIcon from "assets/images/illustrations/skilled_talent.jpg"
+import skilledTalentIcon from "assets/images/illustrations/skilled_talent.png"
 
 function EmployersInfo() {
   const [agreement, setAgremment] = useState(true);

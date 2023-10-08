@@ -66,12 +66,12 @@ function InfoLayout({ title, description, buttonLink, image, children }) {
                                 <ReactRotatingText items={['Manufacturing', 'Logistics', 'Warehousing', 'Construction', 'Automotive']} />
                             </SoftTypography>
                         </SoftBox>
-                        <SoftBox px={1} py={6} width="calc(100% - 2rem)" mx="auto">
+                        <SoftBox px={1} py={{ xs: 6, md: 16 }} width="calc(100% - 2rem)" mx="auto">
                             <Grid item xs={11} sm={4} md={6} lg={8} xl={10}>
                                 {children}
                             </Grid>
                         </SoftBox>
-                        <SoftBox mb={2} mt={15}>
+                        <SoftBox mb={2} mt={{xs: 15, md: 18}}>
                             <SoftButton
                                 component={Link}
                                 to={"https://airtable.com/appF8iniLjyjrpRcM/shrVOxCtgDaUHulVV"}

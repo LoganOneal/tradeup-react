@@ -161,14 +161,14 @@ function LandingLayout({ color, header, title, description, image, top, children
                   <InfoCard
                     image={workerIcon}
                     title="Better for Job Seekers"
-                    description="Let AI navigate your job search"
+                    description="Job Seekers, let AI navigate your job search"
                   />
                 </Grid>
                 <Grid item xs={11} md={6} xl={4}>
                   <InfoCard
                     image={employerIcon}
                     title="Employers Love It"
-                    description="Find, vet, and hire faster with AI"
+                    description="Recruiters, find vetted canidates with AI"
                   />
                 </Grid>
                 <Grid item xs={11} md={6} xl={4}>
