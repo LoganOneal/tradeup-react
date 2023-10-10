@@ -372,6 +372,18 @@ function DefaultNavbar({ brand, transparent, light, action1, action2, sticky, re
         </SoftBox>
         {!mobileView &&
           <>
+              <SoftBox py={2} pr={3}>
+              <SoftButton
+                component={Link}
+                to={"/aboutus"}
+                variant="regular"
+                color={"dark"}
+                size="small"
+                
+              >
+                About Us
+              </SoftButton>
+            </SoftBox>
             <SoftBox py={2}
               pr={2}>
               <SoftButton
@@ -397,18 +409,6 @@ function DefaultNavbar({ brand, transparent, light, action1, action2, sticky, re
                 size="small"
               >
                 {action2.label}
-              </SoftButton>
-            </SoftBox>
-            <SoftBox py={2} pr={3}>
-              <SoftButton
-                component={Link}
-                to={"/aboutus"}
-                variant="regular"
-                color={"dark"}
-                size="small"
-                
-              >
-                About Us
               </SoftButton>
             </SoftBox>
           </>

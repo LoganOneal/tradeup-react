@@ -98,7 +98,7 @@ function LandingLayout({ color, header, title, description, image, top, children
                     Within Reach
                   </SoftTypography>
                 </SoftBox>
-                <SoftTypography variant="h3" py={2} fontWeight="regular" color="text" >
+                <SoftTypography variant="h2" py={2} fontWeight="regular" color="text">
                   <strong>AI</strong> to help real people find real jobs
                 </SoftTypography>
               </>
