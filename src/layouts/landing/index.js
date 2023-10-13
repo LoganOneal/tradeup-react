@@ -63,7 +63,7 @@ function Landing() {
             variant="gradient"
             color="info"
             size="large"
-            sx={{ width: "100%", minHeight: "64px" }}
+            sx={{ width: "100%", minHeight: "48px", whiteSpace: "nowrap"}}
             fullWidth
           >
             Looking for Work?
@@ -77,7 +77,7 @@ function Landing() {
               variant="outlined"
               color="info"
               size="large"
-              sx={{ width: "100%", minHeight: "64px" }}
+              sx={{ width: "100%", minHeight: "48px" }}
               fullWidth
             >
               I Want to Hire

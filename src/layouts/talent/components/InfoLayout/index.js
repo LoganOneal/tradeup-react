@@ -71,7 +71,7 @@ function InfoLayout({ title, description, buttonLink, image, children }) {
                                 {children}
                             </Grid>
                         </SoftBox>
-                        <SoftBox mb={2} mt={{xs: 15, md: 18}}>
+                        <SoftBox mb={12} mt={{xs: 12, md: 12}}>
                             <SoftButton
                                 component={Link}
                                 to={"https://airtable.com/appF8iniLjyjrpRcM/shrVOxCtgDaUHulVV"}

@@ -85,7 +85,7 @@ function LandingLayout({ color, header, title, description, image, top, children
                         variant: "h2"
                       },
                     }}>
-                    A Skilled Industrial Workforce
+                    A Skilled Industrial Workforce&nbsp;
                   </SoftTypography>
                   <SoftTypography variant="h1" fontWeight="bold" color={color} textGradient
                     sx={{
@@ -168,7 +168,7 @@ function LandingLayout({ color, header, title, description, image, top, children
                   <InfoCard
                     image={employerIcon}
                     title="Employers Love It"
-                    description="Recruiters, find vetted canidates with AI"
+                    description="Recruiters, find vetted candidates with AI"
                   />
                 </Grid>
                 <Grid item xs={11} md={6} xl={4}>

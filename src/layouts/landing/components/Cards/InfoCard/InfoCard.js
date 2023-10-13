@@ -66,8 +66,7 @@ function InfoCard({ image, title, description }) {
             rel="noreferrer"
             variant="h4"
             textTransform="capitalize"
-        
-            color="info"
+            color="grey"
           >
             {description}
           </SoftTypography>
